@@ -23,7 +23,9 @@ jobs:
           grep -q 'name="viewport"' index.html
           grep -q 'window.FOUNTAINS=' fountains.js
           # offline-fähig: Daten liegen im Repo, kein fetch
-          ! grep -qiE 'fetch\(|XMLHttpRequest|sendBeacon' index.html
+          ! grep -qiE 'XMLHttpRequest|sendBeacon|gtag|analytics' index.html
+          test "$(grep -o 'fetch([^,)]*' index.html | sort -u | wc -l)" -eq 1
+          grep -q 'https://routing.openstreetmap.de/routed-foot/' index.html
       - uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -31,6 +33,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          cp -r assets _site/
           cp fountains.js _site/
       - uses: actions/upload-pages-artifact@v3
         with:

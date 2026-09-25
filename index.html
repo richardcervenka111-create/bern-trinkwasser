@@ -105,10 +105,10 @@ input[type=checkbox],input[type=radio]{accent-color:var(--acc)}
 
 html,body{height:100%}body{overflow:hidden}
 #app{display:flex;flex-direction:column;height:100dvh;min-height:100%}
-.k-top,.k-top.sticky{position:static;margin:0;padding:8px 14px 6px;border-bottom:1px solid var(--line);background:var(--bg);flex:none;box-shadow:none}
+.k-top,.k-top.sticky{position:sticky;top:0;z-index:50;margin:0;padding:8px 14px 0;border-bottom:1px solid var(--line);background:var(--bg);flex:none;box-shadow:0 1px 0 var(--line),0 6px 18px rgba(0,0,0,.05);row-gap:4px}
 .k-brand h1{font-size:20px}.k-brand small{font-size:13px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .k-brand .k-logo{width:38px;height:38px;border-radius:10px}
-.tools{display:flex;gap:6px;align-items:center;padding:8px 14px;overflow-x:auto;scrollbar-width:none;flex:none;background:var(--bg)}
+.k-top .tools{flex:1 0 100%;order:9;display:flex;gap:6px;align-items:center;padding:6px 14px 8px;margin:0 -14px;overflow-x:auto;scrollbar-width:none;background:var(--bg);-webkit-overflow-scrolling:touch}
 .tools::-webkit-scrollbar{display:none}
 .tools .k-chip{flex:none;padding:6px 11px;min-height:36px;font-size:13.5px}
 .tools .k-chip b{font-weight:800;opacity:.7;font-size:12px}
@@ -125,6 +125,7 @@ html,body{height:100%}body{overflow:hidden}
 .sheet .res .acts .k-btn{min-height:38px;padding:6px 12px;font-size:14px}
 .sheet .res .dist{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
 .sheet .res .dist small{display:block;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sheet .res .dist.calc{opacity:.55}
 .sheet .res .what{min-width:0;font-size:14.5px}.sheet .res .what b{display:block;color:var(--ink);font-size:15.5px}
 .sheet .res .what span{color:var(--ink-2)}
 .k-foot{margin:0;padding:6px 14px 10px;border-top:1px solid var(--line);font-size:12px;background:var(--bg);gap:2px;flex:none;line-height:1.35}
@@ -140,19 +141,18 @@ html,body{height:100%}body{overflow:hidden}
 .leaflet-control-attribution{background:color-mix(in srgb,var(--bg) 80%,transparent);color:var(--muted);font-size:10px}.leaflet-control-attribution a{color:var(--ink-2)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .leaflet-layer{filter:brightness(.7) invert(1) contrast(2.2) hue-rotate(190deg) saturate(.3) brightness(.8)}}
 :root[data-theme="dark"] .leaflet-layer{filter:brightness(.7) invert(1) contrast(2.2) hue-rotate(190deg) saturate(.3) brightness(.8)}
-@media (min-width:900px){.k-top,.k-top.sticky{padding:10px 20px}.tools{padding:8px 20px}.sheet{padding:12px 20px}.k-foot{padding:6px 20px 10px}}
+@media (min-width:900px){.k-top,.k-top.sticky{padding:10px 20px 0}.k-top .tools{padding:8px 20px 10px;margin:0 -20px}.sheet{padding:12px 20px}.k-foot{padding:6px 20px 10px}}
 @media (prefers-reduced-motion:reduce){.me::after{animation:none}}
 </style>
 </head>
 <body>
 <div class="k-splash" aria-hidden="true"><svg class="" width="88" height="88" viewBox="0 0 48 48" role="img" aria-label="Bern Trinkwasser Logo"><defs><linearGradient id="kgberntrinkwasser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b74a3"/><stop offset="1" stop-color="#074f6f"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#kgberntrinkwasser)"/><g class="g" transform="translate(6 6) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-7-12-7-12z"/><path d="M8.8 15.5a3.2 3.2 0 0 0 3.2 3.2"/></g></svg><b>Bern Trinkwasser</b></div>
 <div id="app">
-<header class="k-top sticky"><div class="k-brand"><svg class="k-logo" width="44" height="44" viewBox="0 0 48 48" role="img" aria-label="Bern Trinkwasser Logo"><defs><linearGradient id="kgberntrinkwasser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b74a3"/><stop offset="1" stop-color="#074f6f"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#kgberntrinkwasser)"/><g class="" transform="translate(6 6) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-7-12-7-12z"/><path d="M8.8 15.5a3.2 3.2 0 0 0 3.2 3.2"/></g></svg><div><h1 id="h">Bern Trinkwasser</h1><small id="s">Alle Brunnen der Stadt</small></div></div><div class="k-seg lang" role="group" aria-label="Sprache / Language"><button type="button" data-l="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><button type="button" data-l="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div></header>
-<div class="tools" id="tools" role="group" aria-label="Filter"></div>
+<header class="k-top sticky"><div class="k-brand"><svg class="k-logo" width="44" height="44" viewBox="0 0 48 48" role="img" aria-label="Bern Trinkwasser Logo"><defs><linearGradient id="kgberntrinkwasser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b74a3"/><stop offset="1" stop-color="#074f6f"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#kgberntrinkwasser)"/><g class="" transform="translate(6 6) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-7-12-7-12z"/><path d="M8.8 15.5a3.2 3.2 0 0 0 3.2 3.2"/></g></svg><div><h1 id="h">Bern Trinkwasser</h1><small id="s">Alle Brunnen der Stadt</small></div></div><div class="k-seg lang" role="group" aria-label="Sprache / Language"><button type="button" data-l="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><button type="button" data-l="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div><div class="tools" id="tools" role="group" aria-label="Filter"></div></header>
 <div class="banner" id="banner" hidden></div>
 <div id="map" role="application" aria-label="Karte"></div>
 <div class="sheet"><div id="panel" aria-live="polite"><span id="hint"></span></div><button type="button" class="k-btn primary" id="near"></button></div>
-<footer class="k-foot"><div><span id="src"></span> <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (ODbL), <span id="meta"></span>. <span id="foot"></span></div><div><a href="https://github.com/richardcervenka111-create/bern-trinkwasser" rel="noopener">GitHub</a> · MIT · <a href="https://richardcervenka111-create.github.io/-brig/" rel="noopener">Bärn Kit</a></div></footer>
+<footer class="k-foot"><div><span id="src"></span> <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (ODbL), <span id="meta"></span>. <span id="foot"></span> <span id="routenote"></span></div><div><a href="https://github.com/richardcervenka111-create/bern-trinkwasser" rel="noopener">GitHub</a> · MIT · <a href="https://richardcervenka111-create.github.io/-brig/" rel="noopener">Bärn Kit</a></div></footer>
 </div>
 <script src="assets/leaflet/leaflet.js"></script>
 <script src="fountains.js"></script>
@@ -194,9 +194,8 @@ var top=document.querySelector('.k-top.sticky'); if(top){ var on=false; window.a
 <script>
 (function(){
 const CLASSES={"yes": {"color": "#1fbf8f", "de": "Trinkwasser", "en": "Drinking water", "sk": "Pitná voda"}, "unknown": {"color": "#ffcc55", "de": "Trinkwasser unbekannt", "en": "Drinking water unknown", "sk": "Pitnosť neznáma"}, "no": {"color": "#ff6b6b", "de": "Kein Trinkwasser", "en": "Not drinking water", "sk": "Nie pitná voda"}}, I={"de": {"title": "Bern Trinkwasser", "sub": "Alle öffentlichen Brunnen der Stadt auf einer Karte.", "near": "Nächster Brunnen", "hint": "Tippe auf „Nächster Brunnen“ oder auf einen Punkt.", "n": "Brunnen", "foot": "Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät."}, "en": {"title": "Bern Drinking Water", "sub": "All public fountains of the city on one map.", "near": "Nearest fountain", "hint": "Tap “Nearest fountain” or a dot.", "n": "fountains", "foot": "Drinkable = tag drinking_water=yes. Yellow = unknown, check the sign on the fountain. No tracking, your location stays on the device."}, "sk": {"title": "Bern pitná voda", "sub": "Všetky verejné fontány mesta na jednej mape.", "near": "Najbližšia fontána", "hint": "Ťukni na „Najbližšia fontána“ alebo na bod.", "n": "fontán", "foot": "Pitná = tag drinking_water=yes. Žltá = neznáme, pri pochybnosti pozri tabuľku na fontáne. Žiadne sledovanie, poloha ostáva v zariadení."}}, BANNER=null, DEFAULT_OFF=["no", "unknown"];
-const COMMON={de:{route:"Route",m:"m",away:"entfernt",nearest:"Nächster Punkt",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",locating:"Suche Standort …",none:"In dieser Auswahl gibt es keinen Punkt. Filter einschalten.",n:"Punkte",stand:"Stand OSM",src:"Daten:",foot:"Kein Tracking, Standort bleibt im Gerät. Fehler? Direkt in OpenStreetMap korrigieren.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",noleaf:"Karte konnte nicht geladen werden.",air:"Luftlinie",hide:"Linie ausblenden",osmroute:"Zu Fuss (OSM)"},
- en:{route:"Route",m:"m",away:"away",nearest:"Nearest",noGeo:"Location unavailable. Allow access or zoom yourself.",locating:"Locating …",none:"No point in this selection. Switch a filter on.",n:"points",stand:"OSM as of",src:"Data:",foot:"No tracking, your location stays on the device. Wrong? Fix it in OpenStreetMap.",wheel:"wheelchair accessible",bottle:"bottle refill",noleaf:"The map could not be loaded.",air:"straight line",hide:"Hide line",osmroute:"On foot (OSM)"},
- sk:{route:"Trasa",m:"m",away:"odtiaľto",nearest:"Najbližšie",noGeo:"Poloha nedostupná. Povoľ prístup alebo si priblíž mapu sám.",locating:"Hľadám polohu …",none:"V tomto výbere nie je žiadny bod. Zapni filter.",n:"bodov",stand:"OSM k",src:"Dáta:",foot:"Žiadne sledovanie, poloha ostáva v zariadení. Chyba? Oprav ju priamo v OpenStreetMap.",wheel:"bezbariérové",bottle:"plnenie fľaše",noleaf:"Mapu sa nepodarilo načítať.",air:"vzdušnou čiarou",hide:"Skryť čiaru",osmroute:"Pešo (OSM)"}};
+const COMMON={de:{route:"Route",m:"m",away:"entfernt",nearest:"Nächster Punkt",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",locating:"Suche Standort …",none:"In dieser Auswahl gibt es keinen Punkt. Filter einschalten.",n:"Punkte",stand:"Stand OSM",src:"Daten:",foot:"Kein Tracking, Standort bleibt im Gerät. Fehler? Direkt in OpenStreetMap korrigieren.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",noleaf:"Karte konnte nicht geladen werden.",air:"Luftlinie",walk:"zu Fuss",min:"Min.",calc:"Fussweg wird berechnet …",hide:"Route ausblenden",osmroute:"Route in OSM",routenote:"Der Fussweg wird über routing.openstreetmap.de (FOSSGIS, OSRM) berechnet, dabei werden nur Start und Ziel übertragen."},
+ en:{route:"Route",m:"m",away:"away",nearest:"Nearest",noGeo:"Location unavailable. Allow access or zoom yourself.",locating:"Locating …",none:"No point in this selection. Switch a filter on.",n:"points",stand:"OSM as of",src:"Data:",foot:"No tracking, your location stays on the device. Wrong? Fix it in OpenStreetMap.",wheel:"wheelchair accessible",bottle:"bottle refill",noleaf:"The map could not be loaded.",air:"straight line",walk:"on foot",min:"min",calc:"Calculating walking route …",hide:"Hide route",osmroute:"Route in OSM",routenote:"The walking route is computed by routing.openstreetmap.de (FOSSGIS, OSRM); only start and destination are sent."},};
 let lang=(navigator.language||"de").slice(0,2); if(!I[lang]||lang==="sk") lang="de";
 const KEY="map-lang-bern-trinkwasser"; try{const s=localStorage.getItem(KEY); if(s&&I[s]&&s!=="sk") lang=s;}catch(e){}
 const t=k=>(I[lang][k]!==undefined?I[lang][k]:COMMON[lang][k]);
@@ -215,13 +214,22 @@ const visible=p=>!hidden.has(p.c);
 function draw(){ if(!layer) return; layer.clearLayers(); let n=0; data.forEach(p=>{ if(!visible(p)) return; n++; L.marker([p.lat,p.lon],{icon:icon(p.c)}).bindPopup(label(p)).addTo(layer); });
   $("meta").textContent=`${n} ${t("n")}, ${t("stand")} ${((window.POINTS_META||window.FOUNTAINS_META||{}).osm_base||"").slice(0,10)}`; }
 function dist(a,b,c,d){const R=6371000,q=Math.PI/180,x=(c-a)*q,y=(d-b)*q,h=Math.sin(x/2)**2+Math.cos(a*q)*Math.cos(c*q)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+let routeSeq=0, routeCtl=null;
+function fmtDist(m){ return m>=1000?(m/1000).toFixed(1).replace(".",lang==="de"?",":".")+" km":Math.round(m)+" "+t("m"); }
 function nearest(){ if(!me||!map) return; let best=null,bd=1e12; data.forEach(p=>{ if(!visible(p)) return; const d=dist(me[0],me[1],p.lat,p.lon); if(d<bd){bd=d;best=p;} });
   const pan=$("panel"); if(!best){ pan.innerHTML=`<span>${esc(t("none"))}</span>`; K.shake(pan); return; }
   if(line) map.removeLayer(line); line=L.polyline([me,[best.lat,best.lon]],{color:"#2f7bff",dashArray:"6 6",weight:3}).addTo(map); map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
   const osm=`https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=${me[0]}%2C${me[1]}%3B${best.lat}%2C${best.lon}`;
-  pan.innerHTML=`<div class="res"><div class="dist">${Math.round(bd)}<small>${t("m")} ${t("air")}</small></div><div class="what"><b>${esc(CLASSES[best.c][lang])}</b><span>${best.f[0]?esc(best.f[0]):""}</span></div><div class="acts"><a class="k-btn primary" href="https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lon}&travelmode=walking" rel="noopener">${t("route")}</a><a class="k-btn" href="${osm}" rel="noopener">${t("osmroute")}</a><button type="button" class="k-btn quiet" data-act="hide">${t("hide")}</button></div></div>`;
-  K.pop(pan); L.popup().setLatLng([best.lat,best.lon]).setContent(label(best)).openOn(map); }
-function clearLine(){ if(line&&map){ map.removeLayer(line); line=null; } if(map) map.closePopup(); $("panel").innerHTML=`<span id="hint">${esc(t("hint"))}</span>`; }
+  pan.innerHTML=`<div class="res"><div class="dist calc" id="dist">${fmtDist(bd)}<small>${t("calc")}</small></div><div class="what"><b>${esc(CLASSES[best.c][lang])}</b><span>${best.f[0]?esc(best.f[0]):""}</span></div><div class="acts"><a class="k-btn primary" href="https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lon}&travelmode=walking" rel="noopener">${t("route")}</a><a class="k-btn" href="${osm}" rel="noopener">${t("osmroute")}</a><button type="button" class="k-btn quiet" data-act="hide">${t("hide")}</button></div></div>`;
+  K.pop(pan); L.popup().setLatLng([best.lat,best.lon]).setContent(label(best)).openOn(map);
+  walkRoute(best,bd); }
+function walkRoute(best,bd){ const seq=++routeSeq; if(routeCtl) routeCtl.abort(); routeCtl=new AbortController(); const ctl=routeCtl; const tm=setTimeout(()=>ctl.abort(),9000);
+  const url=`https://routing.openstreetmap.de/routed-foot/route/v1/driving/${me[1]},${me[0]};${best.lon},${best.lat}?overview=full&geometries=geojson&steps=false`;
+  const done=(m,label,km)=>{ clearTimeout(tm); if(seq!==routeSeq) return; const d=$("dist"); if(!d) return; d.classList.remove("calc"); d.innerHTML=`${fmtDist(m)}<small>${label}</small>`; };
+  fetch(url,{signal:ctl.signal,referrerPolicy:"no-referrer"}).then(r=>r.ok?r.json():Promise.reject(r.status)).then(j=>{ const rt=j&&j.routes&&j.routes[0]; if(!rt||!rt.geometry||!rt.geometry.coordinates) throw 0; if(seq!==routeSeq) return;
+    const pts=rt.geometry.coordinates.map(c=>[c[1],c[0]]); if(line) map.removeLayer(line); line=L.polyline(pts,{color:"#2f7bff",weight:5,opacity:.9,lineCap:"round",lineJoin:"round"}).addTo(map); map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
+    done(rt.distance,`${t("walk")} · ${Math.max(1,Math.round(rt.duration/60))} ${t("min")}`); }).catch(()=>done(bd,t("air"))); }
+function clearLine(){ routeSeq++; if(routeCtl) routeCtl.abort(); if(line&&map){ map.removeLayer(line); line=null; } if(map) map.closePopup(); $("panel").innerHTML=`<span id="hint">${esc(t("hint"))}</span>`; }
 $("panel").addEventListener("click",e=>{ const b=e.target.closest&&e.target.closest("[data-act=hide]"); if(b){ clearLine(); K.tick(6); } });
 function locate(){ const b=$("near"); if(!navigator.geolocation||!map){ K.shake(b); K.toast(t("noGeo")); return; }
   b.disabled=true; const old=b.textContent; b.textContent=t("locating");
@@ -234,7 +242,7 @@ function tools(){ const el=$("tools"); el.innerHTML=""; const counts={}; data.fo
   $("near").textContent=t("near"); }
 $("near").addEventListener("click",locate);
 function applyLang(){ document.documentElement.lang=lang; document.title=t("title");
-  $("h").textContent=t("title"); $("s").textContent=t("sub")||""; $("hint").textContent=t("hint"); $("src").textContent=t("src"); $("foot").textContent=t("foot");
+  $("h").textContent=t("title"); $("s").textContent=t("sub")||""; $("hint").textContent=t("hint"); $("src").textContent=t("src"); $("foot").textContent=t("foot"); $("routenote").textContent=t("routenote");
   const b=$("banner"); if(BANNER&&t("banner")){ b.hidden=false; b.innerHTML=esc(t("banner").replace("{d}",BANNER.date).replace("{s}",BANNER.status))+` <a href="${BANNER.url}" rel="noopener">naturgefahren.be.ch</a>`; } else b.hidden=true;
   document.querySelectorAll(".lang button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.l===lang?"true":"false")); tools(); draw(); if(map) setTimeout(()=>map.invalidateSize(),50); }
 document.querySelectorAll(".lang button").forEach(x=>x.addEventListener("click",()=>{lang=x.dataset.l; try{localStorage.setItem(KEY,lang);}catch(e){} applyLang();}));
