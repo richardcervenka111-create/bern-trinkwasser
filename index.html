@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bern Trinkwasser</title>
-<meta name="description" content="Alle öffentlichen Brunnen der Stadt Bern auf einer Karte. Nächster Trinkbrunnen mit einem Tipp. Kein Tracking.">
+<meta name="description" content="Alle öffentlichen Brunnen der Stadt Bern auf einer Karte. Nächster Trinkbrunnen mit einem Fingertipp. Kein Tracking.">
 <link rel="stylesheet" href="assets/leaflet/leaflet.css">
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f161a" media="(prefers-color-scheme: dark)">
@@ -193,12 +193,13 @@ var top=document.querySelector('.k-top.sticky'); if(top){ var on=false; window.a
 </script>
 <script>
 (function(){
-const CLASSES={"yes": {"color": "#1fbf8f", "de": "Trinkwasser", "en": "Drinking water", "sk": "Pitná voda"}, "unknown": {"color": "#ffcc55", "de": "Trinkwasser unbekannt", "en": "Drinking water unknown", "sk": "Pitnosť neznáma"}, "no": {"color": "#ff6b6b", "de": "Kein Trinkwasser", "en": "Not drinking water", "sk": "Nie pitná voda"}}, I={"de": {"title": "Bern Trinkwasser", "sub": "Alle öffentlichen Brunnen der Stadt auf einer Karte.", "near": "Nächster Brunnen", "hint": "Tippe auf „Nächster Brunnen“ oder auf einen Punkt.", "n": "Brunnen", "foot": "Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät."}, "en": {"title": "Bern Drinking Water", "sub": "All public fountains of the city on one map.", "near": "Nearest fountain", "hint": "Tap “Nearest fountain” or a dot.", "n": "fountains", "foot": "Drinkable = tag drinking_water=yes. Yellow = unknown, check the sign on the fountain. No tracking, your location stays on the device."}, "sk": {"title": "Bern pitná voda", "sub": "Všetky verejné fontány mesta na jednej mape.", "near": "Najbližšia fontána", "hint": "Ťukni na „Najbližšia fontána“ alebo na bod.", "n": "fontán", "foot": "Pitná = tag drinking_water=yes. Žltá = neznáme, pri pochybnosti pozri tabuľku na fontáne. Žiadne sledovanie, poloha ostáva v zariadení."}}, BANNER=null, DEFAULT_OFF=["no", "unknown"];
+const CLASSES={"yes": {"color": "#1fbf8f", "de": "Trinkwasser", "en": "Drinking water"}, "unknown": {"color": "#ffcc55", "de": "Trinkwasser unbekannt", "en": "Drinking water unknown"}, "no": {"color": "#ff6b6b", "de": "Kein Trinkwasser", "en": "No drinking water"}}, I={"de": {"title": "Bern Trinkwasser", "sub": "Alle öffentlichen Brunnen der Stadt auf einer Karte.", "near": "Nächster Brunnen", "hint": "Tippe auf „Nächster Brunnen“ oder auf einen Punkt.", "n": "Brunnen", "foot": "Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät."}, "en": {"title": "Bern Drinking Water", "sub": "All the city's public fountains on one map.", "near": "Nearest fountain", "hint": "Tap “Nearest fountain” or a dot.", "n": "fountains", "foot": "Drinkable = tag drinking_water=yes. Yellow = unknown; if in doubt, check the sign on the fountain. No tracking, your location stays on the device."}}, BANNER=null, DEFAULT_OFF=["no", "unknown"];
 const COMMON={de:{route:"Route",m:"m",away:"entfernt",nearest:"Nächster Punkt",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",locating:"Suche Standort …",none:"In dieser Auswahl gibt es keinen Punkt. Filter einschalten.",n:"Punkte",stand:"Stand OSM",src:"Daten:",foot:"Kein Tracking, Standort bleibt im Gerät. Fehler? Direkt in OpenStreetMap korrigieren.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",noleaf:"Karte konnte nicht geladen werden.",air:"Luftlinie",walk:"zu Fuss",min:"Min.",calc:"Fussweg wird berechnet …",hide:"Route ausblenden",osmroute:"Route in OSM",routenote:"Der Fussweg wird über routing.openstreetmap.de (FOSSGIS, OSRM) berechnet, dabei werden nur Start und Ziel übertragen."},
  en:{route:"Route",m:"m",away:"away",nearest:"Nearest",noGeo:"Location unavailable. Allow access or zoom yourself.",locating:"Locating …",none:"No point in this selection. Switch a filter on.",n:"points",stand:"OSM as of",src:"Data:",foot:"No tracking, your location stays on the device. Wrong? Fix it in OpenStreetMap.",wheel:"wheelchair accessible",bottle:"bottle refill",noleaf:"The map could not be loaded.",air:"straight line",walk:"on foot",min:"min",calc:"Calculating walking route …",hide:"Hide route",osmroute:"Route in OSM",routenote:"The walking route is computed by routing.openstreetmap.de (FOSSGIS, OSRM); only start and destination are sent."},};
-let lang=(navigator.language||"de").slice(0,2); if(!I[lang]||lang==="sk") lang="de";
-const KEY="map-lang-bern-trinkwasser"; try{const s=localStorage.getItem(KEY); if(s&&I[s]&&s!=="sk") lang=s;}catch(e){}
+let lang=(navigator.language||"de").slice(0,2); if(!I[lang]) lang="de";
+const KEY="map-lang-bern-trinkwasser"; try{const s=localStorage.getItem(KEY); if(s&&I[s]) lang=s;}catch(e){}
 const t=k=>(I[lang][k]!==undefined?I[lang][k]:COMMON[lang][k]);
+const DESC=document.querySelector('meta[name=description]').content;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=id=>document.getElementById(id);
 const hidden=new Set(DEFAULT_OFF); let me=null, meMarker=null, line=null;
@@ -242,7 +243,7 @@ function tools(){ const el=$("tools"); el.innerHTML=""; const counts={}; data.fo
   $("near").textContent=t("near"); }
 $("near").addEventListener("click",locate);
 function applyLang(){ document.documentElement.lang=lang; document.title=t("title");
-  $("h").textContent=t("title"); $("s").textContent=t("sub")||""; $("hint").textContent=t("hint"); $("src").textContent=t("src"); $("foot").textContent=t("foot"); $("routenote").textContent=t("routenote");
+  $("h").textContent=t("title"); $("s").textContent=t("sub")||""; $("hint").textContent=t("hint"); $("src").textContent=t("src"); $("foot").textContent=t("foot"); $("routenote").textContent=t("routenote"); $("map").setAttribute("aria-label",lang==="de"?"Karte":"Map"); document.querySelector('meta[name=description]').content=(lang==="de"?DESC:(t("sub")||DESC));
   const b=$("banner"); if(BANNER&&t("banner")){ b.hidden=false; b.innerHTML=esc(t("banner").replace("{d}",BANNER.date).replace("{s}",BANNER.status))+` <a href="${BANNER.url}" rel="noopener">naturgefahren.be.ch</a>`; } else b.hidden=true;
   document.querySelectorAll(".lang button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.l===lang?"true":"false")); tools(); draw(); if(map) setTimeout(()=>map.invalidateSize(),50); }
 document.querySelectorAll(".lang button").forEach(x=>x.addEventListener("click",()=>{lang=x.dataset.l; try{localStorage.setItem(KEY,lang);}catch(e){} applyLang();}));
