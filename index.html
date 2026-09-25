@@ -2,83 +2,250 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bern Trinkwasser</title>
-<meta name="description" content="Alle öffentlichen Brunnen in der Stadt Bern auf einer Karte. Nächster Trinkbrunnen mit einem Tipp. Offline nutzbar, kein Tracking.">
-<meta name="theme-color" content="#0b2a3a">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<meta name="description" content="Alle öffentlichen Brunnen der Stadt Bern auf einer Karte. Nächster Trinkbrunnen mit einem Tipp. Kein Tracking.">
+<link rel="stylesheet" href="assets/leaflet/leaflet.css">
+<meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f161a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2048%2048%22%3E%3Crect%20width=%2248%22%20height=%2248%22%20rx=%2211%22%20fill=%22%230b74a3%22/%3E%3Cg%20class=%22%22%20transform=%22translate%286%206%29%20scale%281.5%29%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-width=%222.1%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M12%203s-7%207.5-7%2012a7%207%200%200%200%2014%200c0-4.5-7-12-7-12z%22/%3E%3Cpath%20d=%22M8.8%2015.5a3.2%203.2%200%200%200%203.2%203.2%22/%3E%3C/g%3E%3C/svg%3E">
 <style>
-:root{--bg:#0b2a3a;--card:#123a4f;--line:#1f5068;--txt:#eaf4f8;--mut:#9dc0d0;--acc:#5fe1d4;--no:#ff6b6b;--unk:#ffcc55}
-*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font:16px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif}
-#app{display:flex;flex-direction:column;height:100%}
-header{padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-h1{font-size:19px;margin:0;font-weight:700}
-.sp{flex:1}
-button,.chip{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:14px;cursor:pointer;min-height:40px}
-button.pri{background:var(--acc);color:#04202a;border-color:var(--acc);font-weight:700}
-.chip[aria-pressed="true"]{background:var(--acc);color:#04202a;border-color:var(--acc);font-weight:600}
-#map{flex:1;min-height:300px;background:#dfe9ee}
-#panel{padding:10px 14px;border-top:1px solid var(--line);font-size:15px}
-#panel b{color:var(--acc)}
-.leaflet-popup-content{font:14px/1.4 -apple-system,system-ui,sans-serif;color:#0b2a3a}
-.leaflet-popup-content a{color:#0a8f84}
-.dot{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
-.d-yes{background:#1fbf8f}.d-no{background:var(--no)}.d-unknown{background:var(--unk)}
-.me{width:18px;height:18px;border-radius:50%;background:#2f7bff;border:3px solid #fff;box-shadow:0 0 0 2px #2f7bff}
-.foot{color:var(--mut);font-size:12px;padding:6px 14px 10px}.foot a{color:var(--acc)}
-.lang button{padding:4px 8px;min-height:30px;font-size:13px}
+/* ===== Bärn Kit v1 · shared design system (OFL fonts, no external requests) ===== */
+@font-face{font-family:"Manrope";src:url(assets/fonts/Manrope.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+:root{
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:14px;--r-lg:20px;--r-pill:999px;
+  --shadow:0 10px 30px rgba(18,24,32,.10);--shadow-sm:0 1px 3px rgba(18,24,32,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);
+  --tap:44px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--shadow:0 12px 34px rgba(0,0,0,.5);--shadow-sm:0 1px 3px rgba(0,0,0,.5)}}
+:root[data-theme="dark"]{color-scheme:dark;--shadow:0 12px 34px rgba(0,0,0,.5);--shadow-sm:0 1px 3px rgba(0,0,0,.5)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 var(--font);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+a{color:var(--acc);text-decoration-thickness:1px;text-underline-offset:2px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:is(button,a,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+::selection{background:var(--acc);color:var(--acc-ink)}
+
+/* header */
+.k-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px 6px}
+.k-top.sticky{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);margin-inline:-16px;padding-inline:16px;transition:box-shadow .2s var(--ease)}
+.k-top.sticky.scrolled{box-shadow:0 1px 0 var(--line),0 8px 24px rgba(0,0,0,.06)}
+@media print{.k-top.sticky{position:static;box-shadow:none}}
+.k-brand{display:flex;align-items:center;gap:12px;min-width:0}
+.k-brand .k-logo{flex:none;width:44px;height:44px;border-radius:12px;box-shadow:var(--shadow-sm)}
+.k-brand h1{font-size:clamp(22px,4.6vw,28px);font-weight:800}
+.k-brand small{display:block;font-size:14px;color:var(--muted);font-weight:500;line-height:1.3}
+.k-seg{display:inline-flex;gap:2px;background:var(--surface-2);padding:3px;border-radius:var(--r-pill);flex-wrap:wrap;max-width:100%}
+.k-seg button{border:0;background:transparent;border-radius:var(--r-pill);padding:6px 12px;font-weight:700;font-size:14px;color:var(--ink-2);min-height:34px;transition:background .18s var(--ease),color .18s,transform .12s var(--ease)}
+.k-seg button:hover{color:var(--ink)}
+.k-seg button:active{transform:scale(.94)}
+.k-seg button[aria-pressed="true"],.k-seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+.k-seg button:focus-visible{outline-offset:1px}
+
+/* buttons */
+.k-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r);padding:10px 16px;font-weight:700;font-size:16px;min-height:var(--tap);text-decoration:none;transition:transform .14s var(--spring),background .18s var(--ease),border-color .18s,box-shadow .18s,color .18s;will-change:transform}
+.k-btn:hover{border-color:var(--acc);transform:translateY(-1px)}
+.k-btn:active{transform:scale(.96)}
+.k-btn.primary{background:var(--acc);color:var(--acc-ink);border-color:var(--acc);box-shadow:0 6px 18px color-mix(in srgb,var(--acc) 35%,transparent)}
+.k-btn.primary:hover{filter:brightness(1.06)}
+.k-btn.ghost{background:transparent}
+.k-btn.quiet{border-color:transparent;background:var(--surface-2)}
+.k-btn:disabled{opacity:.55;cursor:default;transform:none}
+.k-chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:var(--r-pill);padding:7px 13px;font-weight:600;font-size:14px;min-height:38px;transition:transform .14s var(--spring),background .18s var(--ease),border-color .18s,color .18s}
+.k-chip:hover{border-color:var(--acc);color:var(--ink)}
+.k-chip:active{transform:scale(.94)}
+.k-chip[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.k-chip i{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+/* cards & fields */
+.k-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-sm)}
+.k-field{display:grid;gap:4px;font-size:14px;color:var(--ink-2);min-width:0}
+.k-field>span{font-weight:700}
+.k-input,input[type=text],input[type=search],input[type=number],input[type=tel],input[type=url],input[type=date],select,textarea{width:100%;font-size:17px;color:var(--ink);background:var(--surface-2);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;min-height:46px;transition:border-color .18s,background .18s,box-shadow .18s}
+:is(.k-input,input,select,textarea):focus{border-color:var(--acc);background:var(--surface);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 18%,transparent);outline:none}
+input[type=checkbox],input[type=radio]{accent-color:var(--acc)}
+.k-badge{display:inline-block;font-size:12px;font-weight:800;padding:3px 9px;border-radius:var(--r-pill);letter-spacing:.02em;line-height:1.3;white-space:nowrap}
+.k-badge.ok{background:var(--ok-soft);color:var(--ok)}.k-badge.warn{background:var(--warn-soft);color:var(--warn)}.k-badge.bad{background:var(--bad-soft);color:var(--bad)}.k-badge.acc{background:var(--acc-soft);color:var(--acc)}
+.k-eyebrow{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.k-note{display:flex;gap:10px;align-items:flex-start;border-radius:12px;padding:12px 14px;font-size:15px;background:var(--acc-soft);color:var(--ink)}
+.k-note::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--acc);margin-top:7px}
+.k-foot{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:28px;display:grid;gap:6px}
+.k-foot a{color:var(--ink-2)}
+.k-prog{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}.k-prog i{display:block;height:100%;background:var(--ok);width:0;transition:width .35s var(--ease)}
+
+/* motion */
+.k-in{animation:k-in .5s var(--ease) both;animation-delay:calc(var(--i,0)*45ms)}
+@keyframes k-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.k-shake{animation:k-shake .45s var(--ease)}
+@keyframes k-shake{10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(2px)}30%,50%,70%{transform:translateX(-4px)}40%,60%{transform:translateX(4px)}}
+.k-pop{animation:k-pop .35s var(--spring)}
+@keyframes k-pop{from{transform:scale(.92)}to{transform:none}}
+.k-toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%,8px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:var(--r-pill);font-weight:700;font-size:15px;opacity:0;pointer-events:none;transition:opacity .2s,transform .25s var(--ease);z-index:50}
+.k-toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* splash */
+.k-splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--bg);animation:k-splash-out .35s var(--ease) .75s both;pointer-events:none}
+.k-splash svg{width:88px;height:88px;border-radius:24px;box-shadow:var(--shadow);animation:k-splash-pop .5s var(--spring) both}
+.k-splash .g{stroke-dasharray:80;stroke-dashoffset:80;animation:k-draw .6s var(--ease) .12s forwards}
+.k-splash b{position:absolute;bottom:14%;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);animation:k-in .4s var(--ease) .3s both}
+@keyframes k-draw{to{stroke-dashoffset:0}}
+@keyframes k-splash-pop{from{transform:scale(.7);opacity:0}to{transform:none;opacity:1}}
+@keyframes k-splash-out{to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.k-splash{display:none}.k-in,.k-pop,.k-shake{animation:none}*{transition-duration:.01ms!important}}
+@media print{.k-splash,.k-toast{display:none!important}}
+:root{--bg:#f4f7f9;--surface:#ffffff;--surface-2:#e7edf0;--line:#cfd9de;--ink:#121c21;--ink-2:#3f515a;--muted:#63757e;--acc:#0b74a3;--acc-ink:#ffffff;--acc-soft:#ddecf2;--ok:#1f7a4d;--ok-soft:#dcf2e6;--warn:#9a5b0a;--warn-soft:#fbf1c7;--bad:#c8102e;--bad-soft:#fbe3e7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f161a;--surface:#182125;--surface-2:#232e34;--line:#38464d;--ink:#f0f3f5;--ink-2:#c5ced3;--muted:#94a1a8;--acc:#5fd0ff;--acc-ink:#0e161b;--acc-soft:#284855;--ok:#5fd39a;--ok-soft:#173626;--warn:#f2c14e;--warn-soft:#3a3212;--bad:#ff6b6b;--bad-soft:#3d1a20}}
+:root[data-theme="dark"]{--bg:#0f161a;--surface:#182125;--surface-2:#232e34;--line:#38464d;--ink:#f0f3f5;--ink-2:#c5ced3;--muted:#94a1a8;--acc:#5fd0ff;--acc-ink:#0e161b;--acc-soft:#284855;--ok:#5fd39a;--ok-soft:#173626;--warn:#f2c14e;--warn-soft:#3a3212;--bad:#ff6b6b;--bad-soft:#3d1a20}
+
+html,body{height:100%}body{overflow:hidden}
+#app{display:flex;flex-direction:column;height:100dvh;min-height:100%}
+.k-top,.k-top.sticky{position:sticky;top:0;z-index:50;margin:0;padding:8px 14px 0;border-bottom:1px solid var(--line);background:var(--bg);flex:none;box-shadow:0 1px 0 var(--line),0 6px 18px rgba(0,0,0,.05);row-gap:4px}
+.k-brand h1{font-size:20px}.k-brand small{font-size:13px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.k-brand .k-logo{width:38px;height:38px;border-radius:10px}
+.k-top .tools{flex:1 0 100%;order:9;display:flex;gap:6px;align-items:center;padding:6px 14px 8px;margin:0 -14px;overflow-x:auto;scrollbar-width:none;background:var(--bg);-webkit-overflow-scrolling:touch}
+.tools::-webkit-scrollbar{display:none}
+.tools .k-chip{flex:none;padding:6px 11px;min-height:36px;font-size:13.5px}
+.tools .k-chip b{font-weight:800;opacity:.7;font-size:12px}
+.tools .sp{flex:1;min-width:6px}
+.tools .k-btn{flex:none;min-height:38px;padding:8px 14px;font-size:14.5px;border-radius:var(--r-pill)}
+.banner{padding:8px 14px;background:var(--warn-soft);color:var(--ink);font-size:14px;flex:none;border-top:1px solid var(--line)}.banner a{color:var(--ink);font-weight:700}
+#map{flex:1;min-height:200px;background:var(--surface-2);position:relative;z-index:0}
+.sheet{flex:none;padding:10px 14px;border-top:1px solid var(--line);background:var(--surface);font-size:15px;box-shadow:0 -8px 24px rgba(0,0,0,.06);display:grid;grid-template-columns:1fr auto;gap:10px 14px;align-items:center}
+.sheet #near{white-space:nowrap}
+@media (max-width:520px){.sheet{grid-template-columns:1fr}.sheet #near{width:100%}}
+.sheet b{color:var(--acc)}.sheet a{font-weight:700}
+.sheet .res{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center}
+.sheet .res .acts{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.sheet .res .acts .k-btn{min-height:38px;padding:6px 12px;font-size:14px}
+.sheet .res .dist{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.sheet .res .dist small{display:block;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sheet .res .dist.calc{opacity:.55}
+.sheet .res .what{min-width:0;font-size:14.5px}.sheet .res .what b{display:block;color:var(--ink);font-size:15.5px}
+.sheet .res .what span{color:var(--ink-2)}
+.k-foot{margin:0;padding:6px 14px 10px;border-top:1px solid var(--line);font-size:12px;background:var(--bg);gap:2px;flex:none;line-height:1.35}
+.dot{width:16px;height:16px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45)}
+.me{width:18px;height:18px;border-radius:50%;background:#2f7bff;border:3px solid #fff;box-shadow:0 0 0 3px rgba(47,123,255,.35)}
+.me::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid rgba(47,123,255,.5);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{from{transform:scale(.5);opacity:1}to{transform:scale(1.4);opacity:0}}
+.leaflet-container{font-family:var(--font);background:var(--surface-2)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.leaflet-popup-content-wrapper{border-radius:14px}.leaflet-popup-content{font:14px/1.45 var(--font);margin:12px 16px}.leaflet-popup-content a{color:var(--acc);font-weight:700}
+.leaflet-bar{border:0;box-shadow:var(--shadow-sm)}.leaflet-bar a{background:var(--surface);color:var(--ink);border-bottom-color:var(--line);width:36px;height:36px;line-height:36px;font-family:var(--font)}
+.leaflet-bar a:hover{background:var(--surface-2)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--bg) 80%,transparent);color:var(--muted);font-size:10px}.leaflet-control-attribution a{color:var(--ink-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .leaflet-layer{filter:brightness(.7) invert(1) contrast(2.2) hue-rotate(190deg) saturate(.3) brightness(.8)}}
+:root[data-theme="dark"] .leaflet-layer{filter:brightness(.7) invert(1) contrast(2.2) hue-rotate(190deg) saturate(.3) brightness(.8)}
+@media (min-width:900px){.k-top,.k-top.sticky{padding:10px 20px 0}.k-top .tools{padding:8px 20px 10px;margin:0 -20px}.sheet{padding:12px 20px}.k-foot{padding:6px 20px 10px}}
+@media (prefers-reduced-motion:reduce){.me::after{animation:none}}
 </style>
 </head>
 <body>
+<div class="k-splash" aria-hidden="true"><svg class="" width="88" height="88" viewBox="0 0 48 48" role="img" aria-label="Bern Trinkwasser Logo"><defs><linearGradient id="kgberntrinkwasser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b74a3"/><stop offset="1" stop-color="#074f6f"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#kgberntrinkwasser)"/><g class="g" transform="translate(6 6) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-7-12-7-12z"/><path d="M8.8 15.5a3.2 3.2 0 0 0 3.2 3.2"/></g></svg><b>Bern Trinkwasser</b></div>
 <div id="app">
-<header>
-  <h1 data-i="title">Bern Trinkwasser</h1>
-  <span class="chip" role="button" tabindex="0" id="fOnly" aria-pressed="true" data-i="only">nur trinkbar</span>
-  <span class="sp"></span>
-  <span class="lang"><button data-l="de" aria-pressed="true">DE</button><button data-l="en" aria-pressed="false">EN</button><button data-l="sk" aria-pressed="false">SK</button></span>
-  <button class="pri" id="near" data-i="near">Nächster Brunnen</button>
-</header>
+<header class="k-top sticky"><div class="k-brand"><svg class="k-logo" width="44" height="44" viewBox="0 0 48 48" role="img" aria-label="Bern Trinkwasser Logo"><defs><linearGradient id="kgberntrinkwasser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b74a3"/><stop offset="1" stop-color="#074f6f"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#kgberntrinkwasser)"/><g class="" transform="translate(6 6) scale(1.5)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-7 7.5-7 12a7 7 0 0 0 14 0c0-4.5-7-12-7-12z"/><path d="M8.8 15.5a3.2 3.2 0 0 0 3.2 3.2"/></g></svg><div><h1 id="h">Bern Trinkwasser</h1><small id="s">Alle Brunnen der Stadt</small></div></div><div class="k-seg lang" role="group" aria-label="Sprache / Language"><button type="button" data-l="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><button type="button" data-l="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div><div class="tools" id="tools" role="group" aria-label="Filter"></div></header>
+<div class="banner" id="banner" hidden></div>
 <div id="map" role="application" aria-label="Karte"></div>
-<div id="panel" aria-live="polite"><span data-i="hint">Tippe auf „Nächster Brunnen“ oder auf einen Punkt.</span></div>
-<div class="foot"><span data-i="src">Daten</span>: <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (ODbL), <span id="meta"></span>. <span data-i="foot">Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät.</span> · <a href="https://github.com/richardcervenka111-create/bern-trinkwasser" rel="noopener">GitHub</a></div>
+<div class="sheet"><div id="panel" aria-live="polite"><span id="hint"></span></div><button type="button" class="k-btn primary" id="near"></button></div>
+<footer class="k-foot"><div><span id="src"></span> <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (ODbL), <span id="meta"></span>. <span id="foot"></span> <span id="routenote"></span></div><div><a href="https://github.com/richardcervenka111-create/bern-trinkwasser" rel="noopener">GitHub</a> · MIT · <a href="https://richardcervenka111-create.github.io/-brig/" rel="noopener">Bärn Kit</a></div></footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/leaflet/leaflet.js"></script>
 <script src="fountains.js"></script>
 <script>
+/* ===== Bärn Kit v1 · micro-interactions (no network, no storage except session flag) ===== */
 (function(){
-const I={
- de:{title:"Bern Trinkwasser",only:"nur trinkbar",near:"Nächster Brunnen",hint:"Tippe auf „Nächster Brunnen“ oder auf einen Punkt.",src:"Daten",foot:"Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät.",
-  yes:"Trinkwasser",no:"Kein Trinkwasser",unknown:"Trinkwasser unbekannt",dw:"Trinkbrunnen",ft:"Brunnen",route:"Route",m:"m",away:"entfernt",nearest:"Nächster Trinkbrunnen",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",n:"Brunnen",stand:"Stand OSM"},
- en:{title:"Bern Drinking Water",only:"drinkable only",near:"Nearest fountain",hint:"Tap “Nearest fountain” or a dot.",src:"Data",foot:"Drinkable = tag drinking_water=yes. Yellow = unknown, check the sign on the fountain. No tracking, your location stays on the device.",
-  yes:"Drinking water",no:"Not drinking water",unknown:"Drinking water unknown",dw:"Drinking fountain",ft:"Fountain",route:"Route",m:"m",away:"away",nearest:"Nearest drinking fountain",noGeo:"Location unavailable. Allow access or zoom yourself.",wheel:"wheelchair accessible",bottle:"bottle refill",n:"fountains",stand:"OSM as of"},
- sk:{title:"Bern pitná voda",only:"len pitná",near:"Najbližšia fontána",hint:"Ťukni na „Najbližšia fontána“ alebo na bod.",src:"Dáta",foot:"Pitná = tag drinking_water=yes. Žltá = neznáme, pri pochybnosti pozri tabuľku na fontáne. Žiadne sledovanie, poloha ostáva v zariadení.",
-  yes:"Pitná voda",no:"Nie pitná voda",unknown:"Pitnosť neznáma",dw:"Pitná fontána",ft:"Fontána",route:"Trasa",m:"m",away:"odtiaľto",nearest:"Najbližšia pitná fontána",noGeo:"Poloha nedostupná. Povoľ prístup alebo si priblíž mapu sám.",wheel:"bezbariérová",bottle:"plnenie fľaše",n:"fontán",stand:"OSM k"}
-};
-let lang=(navigator.language||"de").slice(0,2); if(!I[lang]) lang="de";
-try{const s=localStorage.getItem("bw-lang"); if(s&&I[s]) lang=s;}catch(e){}
-const t=k=>I[lang][k];
-let onlyDrink=true, me=null, meMarker=null, line=null;
-const data=window.FOUNTAINS||[];
-const map=L.map("map",{zoomControl:true}).setView([46.948,7.447],14);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(map);
-const layer=L.layerGroup().addTo(map);
-function icon(cls){return L.divIcon({className:"",html:`<div class="dot d-${cls}"></div>`,iconSize:[14,14],iconAnchor:[7,7]});}
-function label(f){ const kind=t(f.k), st=t(f.d); const name=f.n?`<b>${esc(f.n)}</b><br>`:""; const loc=f.l?esc(f.l)+"<br>":""; const extra=[f.w==="yes"?t("wheel"):"",f.b==="yes"?t("bottle"):""].filter(Boolean).join(" · ");
-  return `${name}${loc}${kind} · <b>${st}</b>${extra?"<br>"+extra:""}<br><a href="https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lon}&travelmode=walking" rel="noopener">${t("route")}</a> · <a href="https://www.openstreetmap.org/node/${f.id}" rel="noopener">OSM</a>`; }
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
-function draw(){ layer.clearLayers(); let n=0; data.forEach(f=>{ if(onlyDrink&&f.d!=="yes") return; n++; L.marker([f.lat,f.lon],{icon:icon(f.d)}).bindPopup(label(f)).addTo(layer); }); document.getElementById("meta").textContent=`${n} ${t("n")}, ${t("stand")} ${(window.FOUNTAINS_META||{}).osm_base||""}`; }
-function dist(a,b,c,d){const R=6371000,p=Math.PI/180,x=(c-a)*p,y=(d-b)*p,h=Math.sin(x/2)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
-function nearest(){ if(!me) return; let best=null,bd=1e12; data.forEach(f=>{ if(f.d!=="yes") return; const d=dist(me[0],me[1],f.lat,f.lon); if(d<bd){bd=d;best=f;} }); if(!best) return;
-  if(line) map.removeLayer(line); line=L.polyline([me,[best.lat,best.lon]],{color:"#2f7bff",dashArray:"6 6",weight:3}).addTo(map);
-  map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
-  const pan=document.getElementById("panel"); pan.innerHTML=`<b>${t("nearest")}</b>: ${best.n?esc(best.n):(best.l?esc(best.l):t("dw"))} · <b>${Math.round(bd)} ${t("m")}</b> ${t("away")} · <a style="color:var(--acc)" href="https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lon}&travelmode=walking" rel="noopener">${t("route")}</a>`;
-  L.popup().setLatLng([best.lat,best.lon]).setContent(label(best)).openOn(map); }
-document.getElementById("near").addEventListener("click",()=>{ if(!navigator.geolocation){alert(t("noGeo"));return;}
-  navigator.geolocation.getCurrentPosition(p=>{ me=[p.coords.latitude,p.coords.longitude]; if(meMarker) map.removeLayer(meMarker); meMarker=L.marker(me,{icon:L.divIcon({className:"",html:'<div class="me"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map); nearest(); },()=>alert(t("noGeo")),{enableHighAccuracy:true,timeout:10000}); });
-const fo=document.getElementById("fOnly"); function toggle(){ onlyDrink=!onlyDrink; fo.setAttribute("aria-pressed",onlyDrink?"true":"false"); draw(); }
-fo.addEventListener("click",toggle); fo.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
-function applyLang(){ document.documentElement.lang=lang; document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i)); document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang?"true":"false")); draw(); }
-document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.l; try{localStorage.setItem("bw-lang",lang);}catch(e){} applyLang();}));
+'use strict';
+var K=window.K=window.K||{};
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* splash: once per session, removed after animation */
+(function(){
+  var s=document.querySelector('.k-splash'); if(!s) return;
+  var seen=false; try{ seen=sessionStorage.getItem('k-splash')==='1'; sessionStorage.setItem('k-splash','1'); }catch(e){}
+  if(seen||reduced){ s.remove(); return; }
+  var done=false; function kill(){ if(done) return; done=true; s.remove(); }
+  s.addEventListener('animationend',function(e){ if(e.target===s) kill(); });
+  setTimeout(kill,1400);
+})();
+/* haptics: tiny tick on primary actions where supported */
+var armed=false; document.addEventListener('pointerdown',function(){ armed=true; },{passive:true,once:true}); document.addEventListener('keydown',function(){ armed=true; },{passive:true,once:true});
+K.tick=function(ms){ try{ if(armed&&navigator.vibrate) navigator.vibrate(ms||8); }catch(e){} };
+/* shake feedback for invalid input / wrong answer */
+K.shake=function(el){ if(!el||reduced) return; el.classList.remove('k-shake'); void el.offsetWidth; el.classList.add('k-shake'); K.tick([12,40,12]); el.addEventListener('animationend',function h(){ el.classList.remove('k-shake'); el.removeEventListener('animationend',h); }); };
+K.pop=function(el){ if(!el||reduced) return; el.classList.remove('k-pop'); void el.offsetWidth; el.classList.add('k-pop'); };
+/* toast */
+var tt,ttT; K.toast=function(m){ if(!tt){ tt=document.createElement('div'); tt.className='k-toast'; tt.setAttribute('role','status'); document.body.appendChild(tt); } tt.textContent=m; tt.classList.add('show'); clearTimeout(ttT); ttT=setTimeout(function(){ tt.classList.remove('show'); },2000); };
+/* stagger entrance for freshly rendered lists: K.stagger(container) */
+K.stagger=function(root,max){ if(!root||reduced) return; var kids=root.children,n=Math.min(kids.length,max||14); for(var i=0;i<n;i++){ kids[i].style.setProperty('--i',i); kids[i].classList.add('k-in'); } };
+/* delegated haptics on primary buttons */
+document.addEventListener('pointerdown',function(e){ var b=e.target.closest&&e.target.closest('.k-btn.primary,.k-chip,.k-seg button'); if(b) K.tick(6); },{passive:true});
+/* language persistence for the kit switcher (.lang button[data-l]) */
+(function(){ var KEY='k-lang'; document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('.lang button[data-l]'); if(b){ try{ localStorage.setItem(KEY,b.dataset.l); }catch(x){} } },true);
+  function restore(){ var v=null; try{ v=localStorage.getItem(KEY); }catch(x){} if(!v) return; var b=document.querySelector('.lang button[data-l="'+v+'"]'); if(b&&b.getAttribute('aria-pressed')!=='true') b.click(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',restore); else restore(); })();
+/* sticky header shadow */
+var top=document.querySelector('.k-top.sticky'); if(top){ var on=false; window.addEventListener('scroll',function(){ var s=window.scrollY>8; if(s!==on){ on=s; top.classList.toggle('scrolled',s); } },{passive:true}); }
+})();
+</script>
+<script>
+(function(){
+const CLASSES={"yes": {"color": "#1fbf8f", "de": "Trinkwasser", "en": "Drinking water", "sk": "Pitná voda"}, "unknown": {"color": "#ffcc55", "de": "Trinkwasser unbekannt", "en": "Drinking water unknown", "sk": "Pitnosť neznáma"}, "no": {"color": "#ff6b6b", "de": "Kein Trinkwasser", "en": "Not drinking water", "sk": "Nie pitná voda"}}, I={"de": {"title": "Bern Trinkwasser", "sub": "Alle öffentlichen Brunnen der Stadt auf einer Karte.", "near": "Nächster Brunnen", "hint": "Tippe auf „Nächster Brunnen“ oder auf einen Punkt.", "n": "Brunnen", "foot": "Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät."}, "en": {"title": "Bern Drinking Water", "sub": "All public fountains of the city on one map.", "near": "Nearest fountain", "hint": "Tap “Nearest fountain” or a dot.", "n": "fountains", "foot": "Drinkable = tag drinking_water=yes. Yellow = unknown, check the sign on the fountain. No tracking, your location stays on the device."}, "sk": {"title": "Bern pitná voda", "sub": "Všetky verejné fontány mesta na jednej mape.", "near": "Najbližšia fontána", "hint": "Ťukni na „Najbližšia fontána“ alebo na bod.", "n": "fontán", "foot": "Pitná = tag drinking_water=yes. Žltá = neznáme, pri pochybnosti pozri tabuľku na fontáne. Žiadne sledovanie, poloha ostáva v zariadení."}}, BANNER=null, DEFAULT_OFF=["no", "unknown"];
+const COMMON={de:{route:"Route",m:"m",away:"entfernt",nearest:"Nächster Punkt",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",locating:"Suche Standort …",none:"In dieser Auswahl gibt es keinen Punkt. Filter einschalten.",n:"Punkte",stand:"Stand OSM",src:"Daten:",foot:"Kein Tracking, Standort bleibt im Gerät. Fehler? Direkt in OpenStreetMap korrigieren.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",noleaf:"Karte konnte nicht geladen werden.",air:"Luftlinie",walk:"zu Fuss",min:"Min.",calc:"Fussweg wird berechnet …",hide:"Route ausblenden",osmroute:"Route in OSM",routenote:"Der Fussweg wird über routing.openstreetmap.de (FOSSGIS, OSRM) berechnet, dabei werden nur Start und Ziel übertragen."},
+ en:{route:"Route",m:"m",away:"away",nearest:"Nearest",noGeo:"Location unavailable. Allow access or zoom yourself.",locating:"Locating …",none:"No point in this selection. Switch a filter on.",n:"points",stand:"OSM as of",src:"Data:",foot:"No tracking, your location stays on the device. Wrong? Fix it in OpenStreetMap.",wheel:"wheelchair accessible",bottle:"bottle refill",noleaf:"The map could not be loaded.",air:"straight line",walk:"on foot",min:"min",calc:"Calculating walking route …",hide:"Hide route",osmroute:"Route in OSM",routenote:"The walking route is computed by routing.openstreetmap.de (FOSSGIS, OSRM); only start and destination are sent."},};
+let lang=(navigator.language||"de").slice(0,2); if(!I[lang]||lang==="sk") lang="de";
+const KEY="map-lang-bern-trinkwasser"; try{const s=localStorage.getItem(KEY); if(s&&I[s]&&s!=="sk") lang=s;}catch(e){}
+const t=k=>(I[lang][k]!==undefined?I[lang][k]:COMMON[lang][k]);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $=id=>document.getElementById(id);
+const hidden=new Set(DEFAULT_OFF); let me=null, meMarker=null, line=null;
+const data=(window.FOUNTAINS||[]).map(p=>({id:p.id,ty:"node",lat:p.lat,lon:p.lon,c:p.d,f:[p.n,p.l].filter(Boolean),w:p.w,b:p.b}));
+if(!window.L){ $("map").innerHTML='<p style="padding:16px;color:var(--muted)">'+esc(COMMON[lang].noleaf)+'</p>'; }
+const map=window.L?L.map("map",{zoomControl:true}).setView([46.948,7.447],14):null;
+if(map){ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(map); }
+const layer=map?L.layerGroup().addTo(map):null;
+const icon=c=>L.divIcon({className:"",html:`<div class="dot" style="background:${CLASSES[c].color}"></div>`,iconSize:[16,16],iconAnchor:[8,8]});
+function label(p){ const lines=[`<b>${esc(CLASSES[p.c][lang])}</b>`].concat(p.f.map(esc)); if(p.w==="yes") lines.push(t("wheel")); if(p.b==="yes") lines.push(t("bottle"));
+  lines.push(`<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=walking" rel="noopener">${t("route")}</a> · <a href="https://www.openstreetmap.org/${p.ty}/${p.id}" rel="noopener">OSM</a>`); return lines.join("<br>"); }
+const visible=p=>!hidden.has(p.c);
+function draw(){ if(!layer) return; layer.clearLayers(); let n=0; data.forEach(p=>{ if(!visible(p)) return; n++; L.marker([p.lat,p.lon],{icon:icon(p.c)}).bindPopup(label(p)).addTo(layer); });
+  $("meta").textContent=`${n} ${t("n")}, ${t("stand")} ${((window.POINTS_META||window.FOUNTAINS_META||{}).osm_base||"").slice(0,10)}`; }
+function dist(a,b,c,d){const R=6371000,q=Math.PI/180,x=(c-a)*q,y=(d-b)*q,h=Math.sin(x/2)**2+Math.cos(a*q)*Math.cos(c*q)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+let routeSeq=0, routeCtl=null;
+function fmtDist(m){ return m>=1000?(m/1000).toFixed(1).replace(".",lang==="de"?",":".")+" km":Math.round(m)+" "+t("m"); }
+function nearest(){ if(!me||!map) return; let best=null,bd=1e12; data.forEach(p=>{ if(!visible(p)) return; const d=dist(me[0],me[1],p.lat,p.lon); if(d<bd){bd=d;best=p;} });
+  const pan=$("panel"); if(!best){ pan.innerHTML=`<span>${esc(t("none"))}</span>`; K.shake(pan); return; }
+  if(line) map.removeLayer(line); line=L.polyline([me,[best.lat,best.lon]],{color:"#2f7bff",dashArray:"6 6",weight:3}).addTo(map); map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
+  const osm=`https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=${me[0]}%2C${me[1]}%3B${best.lat}%2C${best.lon}`;
+  pan.innerHTML=`<div class="res"><div class="dist calc" id="dist">${fmtDist(bd)}<small>${t("calc")}</small></div><div class="what"><b>${esc(CLASSES[best.c][lang])}</b><span>${best.f[0]?esc(best.f[0]):""}</span></div><div class="acts"><a class="k-btn primary" href="https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lon}&travelmode=walking" rel="noopener">${t("route")}</a><a class="k-btn" href="${osm}" rel="noopener">${t("osmroute")}</a><button type="button" class="k-btn quiet" data-act="hide">${t("hide")}</button></div></div>`;
+  K.pop(pan); L.popup().setLatLng([best.lat,best.lon]).setContent(label(best)).openOn(map);
+  walkRoute(best,bd); }
+function walkRoute(best,bd){ const seq=++routeSeq; if(routeCtl) routeCtl.abort(); routeCtl=new AbortController(); const ctl=routeCtl; const tm=setTimeout(()=>ctl.abort(),9000);
+  const url=`https://routing.openstreetmap.de/routed-foot/route/v1/driving/${me[1]},${me[0]};${best.lon},${best.lat}?overview=full&geometries=geojson&steps=false`;
+  const done=(m,label,km)=>{ clearTimeout(tm); if(seq!==routeSeq) return; const d=$("dist"); if(!d) return; d.classList.remove("calc"); d.innerHTML=`${fmtDist(m)}<small>${label}</small>`; };
+  fetch(url,{signal:ctl.signal,referrerPolicy:"no-referrer"}).then(r=>r.ok?r.json():Promise.reject(r.status)).then(j=>{ const rt=j&&j.routes&&j.routes[0]; if(!rt||!rt.geometry||!rt.geometry.coordinates) throw 0; if(seq!==routeSeq) return;
+    const pts=rt.geometry.coordinates.map(c=>[c[1],c[0]]); if(line) map.removeLayer(line); line=L.polyline(pts,{color:"#2f7bff",weight:5,opacity:.9,lineCap:"round",lineJoin:"round"}).addTo(map); map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
+    done(rt.distance,`${t("walk")} · ${Math.max(1,Math.round(rt.duration/60))} ${t("min")}`); }).catch(()=>done(bd,t("air"))); }
+function clearLine(){ routeSeq++; if(routeCtl) routeCtl.abort(); if(line&&map){ map.removeLayer(line); line=null; } if(map) map.closePopup(); $("panel").innerHTML=`<span id="hint">${esc(t("hint"))}</span>`; }
+$("panel").addEventListener("click",e=>{ const b=e.target.closest&&e.target.closest("[data-act=hide]"); if(b){ clearLine(); K.tick(6); } });
+function locate(){ const b=$("near"); if(!navigator.geolocation||!map){ K.shake(b); K.toast(t("noGeo")); return; }
+  b.disabled=true; const old=b.textContent; b.textContent=t("locating");
+  navigator.geolocation.getCurrentPosition(p=>{ b.disabled=false; b.textContent=old; me=[p.coords.latitude,p.coords.longitude]; if(meMarker) map.removeLayer(meMarker);
+    meMarker=L.marker(me,{icon:L.divIcon({className:"",html:'<div class="me"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map); nearest(); },
+    ()=>{ b.disabled=false; b.textContent=old; K.shake(b); K.toast(t("noGeo")); },{enableHighAccuracy:true,timeout:10000}); }
+function tools(){ const el=$("tools"); el.innerHTML=""; const counts={}; data.forEach(p=>{counts[p.c]=(counts[p.c]||0)+1;});
+  Object.keys(CLASSES).forEach(k=>{ const b=document.createElement("button"); b.type="button"; b.className="k-chip"; b.setAttribute("aria-pressed",hidden.has(k)?"false":"true");
+    b.innerHTML=`<i style="background:${CLASSES[k].color}"></i>${esc(CLASSES[k][lang])} <b>${counts[k]||0}</b>`; b.onclick=()=>{ hidden.has(k)?hidden.delete(k):hidden.add(k); b.setAttribute("aria-pressed",hidden.has(k)?"false":"true"); draw(); }; el.appendChild(b); });
+  $("near").textContent=t("near"); }
+$("near").addEventListener("click",locate);
+function applyLang(){ document.documentElement.lang=lang; document.title=t("title");
+  $("h").textContent=t("title"); $("s").textContent=t("sub")||""; $("hint").textContent=t("hint"); $("src").textContent=t("src"); $("foot").textContent=t("foot"); $("routenote").textContent=t("routenote");
+  const b=$("banner"); if(BANNER&&t("banner")){ b.hidden=false; b.innerHTML=esc(t("banner").replace("{d}",BANNER.date).replace("{s}",BANNER.status))+` <a href="${BANNER.url}" rel="noopener">naturgefahren.be.ch</a>`; } else b.hidden=true;
+  document.querySelectorAll(".lang button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.l===lang?"true":"false")); tools(); draw(); if(map) setTimeout(()=>map.invalidateSize(),50); }
+document.querySelectorAll(".lang button").forEach(x=>x.addEventListener("click",()=>{lang=x.dataset.l; try{localStorage.setItem(KEY,lang);}catch(e){} applyLang();}));
 applyLang();
 })();
 </script>
