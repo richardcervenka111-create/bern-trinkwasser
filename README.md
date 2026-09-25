@@ -1,6 +1,6 @@
 # Bern Trinkwasser
 
-Alle öffentlichen Brunnen der Stadt Bern auf einer Karte. Ein Tipp zeigt den nächsten Trinkbrunnen mit Fussweg. DE/EN/SK, kein Tracking, Standort bleibt im Gerät.
+Alle öffentlichen Brunnen der Stadt Bern auf einer Karte. Ein Tipp zeigt den nächsten Trinkbrunnen mit Fussweg. DE/EN, kein Tracking, Standort bleibt im Gerät.
 
 Live: **https://richardcervenka111-create.github.io/bern-trinkwasser/**
 
