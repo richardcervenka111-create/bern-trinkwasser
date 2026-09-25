@@ -1,0 +1,2718 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-24T23:09:59Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 286879718,
+  "lat": 46.9471016,
+  "lon": 7.4438777,
+  "tags": {
+    "alt_name": "Wasserspiel auf dem Bundesplatz",
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "no",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/House_%26_square_of_parliament_%283625514675%29.jpg/800px-House_%26_square_of_parliament_%283625514675%29.jpg",
+    "location:description:de": "Auf dem Bundesplatz vor dem Gebäude Bundesplatz 8 in 3011 Bern.",
+    "name": "Wasserspiel",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56651684",
+    "wikimedia_commons": "Category:Wasserspiel auf dem Bundesplatz"
+  }
+},
+{
+  "type": "node",
+  "id": 370783225,
+  "lat": 46.9624094,
+  "lon": 7.4120039,
+  "tags": {
+    "amenity": "fountain",
+    "bottle": "yes",
+    "description": "Der Glasbrunnen ist eine gefasste Quelle mit einem felsartigem Brunnenstock aus Stein mit Wasserröhre aus Eisen und rechteckigen Becken aus Stein.",
+    "drinking_water": "yes",
+    "ele": "542",
+    "fountain": "stone_block",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bern_Glasbrunnen.jpg/800px-Bern_Glasbrunnen.jpg",
+    "location:description:de": "Im Bremgartenwald den Wegweisern folgen ab Halenstrasse, nicht ganz 500 Meter entlang Wohlenstrasse bis zu einer kleinen Lichtung am Abhang in 3012 Bern.",
+    "name": "Glasbrunnen",
+    "operator": "Burgergemeinde Bern",
+    "owner": "Burgergemeinde Bern",
+    "water_source": "spring",
+    "wikidata": "Q1529377",
+    "wikimedia_commons": "Category:Glasbrunnen (Bern)",
+    "wikipedia": "de:Glasbrunnen"
+  }
+},
+{
+  "type": "node",
+  "id": 558843441,
+  "lat": 46.9465194,
+  "lon": 7.4527911,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description:de": "Laufbrunnen mit Becken und Stock mit abschliessender Kugel aus Stein und Brunnenröhre aus Gusseisen, sowie ein Nebenbecken aus Stein.",
+    "drinking_water": "yes",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Badgassbrunnen_02.jpg/800px-Badgassbrunnen_02.jpg",
+    "location:description:de": "Vor dem Haus Badgasse 10 gegenüber \"Zum Zähringer\" Badgasse 1 in 3011 Bern.",
+    "name": "Badgassbrunnen",
+    "operator": "Energie Wasser Bern",
+    "source": "survey and Orthofotos Bern",
+    "wikidata": "Q55445914",
+    "wikimedia_commons": "Category:Badgassbrunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 565092343,
+  "lat": 46.9537482,
+  "lon": 7.4389137,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Das hochklassizistische und mehrfach versetzte Henkerbrünnli mit Becken und Stock aus Jurakalk von 1829, steht seit 1960 an der selben Stelle.",
+    "drinking_water": "yes",
+    "ele": "540",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Henkerbrünnli_07.jpg/800px-Henkerbrünnli_07.jpg",
+    "location:description:de": "Vor den Gebäuden Neubrückstrasse 17 und 19 in 3012 Bern.",
+    "name": "Henkerbrünnli",
+    "note": "Bauarchiv: http://archives-quickaccess.ch/bbb/lexikon/3048",
+    "source": "Survey",
+    "wikidata": "Q56249431",
+    "wikimedia_commons": "Category:Henkerbrünnli (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 671908438,
+  "lat": 46.9409072,
+  "lon": 7.4295745,
+  "tags": {
+    "alt_name": "Brunnen Hopfenrain",
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "528.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Hopfenrain-Brunnen_02.jpg/800px-Hopfenrain-Brunnen_02.jpg",
+    "location:description:de": "Auf dem Vorplatz des Gebäudes Hopfenrain 10 in 3007 Bern.",
+    "name": "Hopfenrain-Brunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56062809",
+    "wikimedia_commons": "Category:Hopfenrain-Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 728649013,
+  "lat": 46.9857229,
+  "lon": 7.4663924,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 892579243,
+  "lat": 46.9687627,
+  "lon": 7.4398286,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "496",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Felsenau-Brunnen_(Bern)_06.jpg/800px-Felsenau-Brunnen_(Bern)_06.jpg",
+    "location:description:de": "In der Mitte einer kleinen Parkanlage am Seftauweg östlichen vom Felsenau Kraftwerk Felsenaustrasse 51 in 3004 Bern.",
+    "name": "Felsenau-Brunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Energie Wasser Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56240357",
+    "wikimedia_commons": "Category:Felsenau-Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 1089413764,
+  "lat": 46.9769481,
+  "lon": 7.4345789,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 1270493961,
+  "lat": 46.9258243,
+  "lon": 7.4415341,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1270493997,
+  "lat": 46.9247046,
+  "lon": 7.4393219,
+  "tags": {
+    "amenity": "drinking_water",
+    "check_date": "2024-09-06",
+    "fee": "no",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 1279058226,
+  "lat": 46.9283193,
+  "lon": 7.4319797,
+  "tags": {
+    "amenity": "fountain",
+    "bottle": "yes",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1289493635,
+  "lat": 46.9207473,
+  "lon": 7.4136942,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1657148838,
+  "lat": 46.9565352,
+  "lon": 7.4846364,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 1708936668,
+  "lat": 46.9527831,
+  "lon": 7.4416661,
+  "tags": {
+    "alt_name": "Brunnen Schützenmattstrasse",
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "532.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Brunnen_Sch%C3%BCtzenmattstrasse_04.jpg/800px-Brunnen_Sch%C3%BCtzenmattstrasse_04.jpg",
+    "loc_ref": "BRU 171 Schützenmattstrassb",
+    "location:description:de": "An der Schützenmattstrasse gegenüber der Schützenmatt vor der Eisenbahnüberführung Lorraineviadukt in 3012 Bern.",
+    "name": "Schützenmattbrunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56604721",
+    "wikimedia_commons": "Category:Schützenmattbrunnen (Brunnen Schützenmattstrasse)"
+  }
+},
+{
+  "type": "node",
+  "id": 1792383177,
+  "lat": 46.9216154,
+  "lon": 7.4119429,
+  "tags": {
+    "amenity": "drinking_water",
+    "check_date": "2022-08-07",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 2267155796,
+  "lat": 46.9440490,
+  "lon": 7.3968596,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "fee": "no",
+    "operator": "Immobilien Stadt Bern",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2310987285,
+  "lat": 46.9092680,
+  "lon": 7.4157228,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 2311004940,
+  "lat": 46.9002630,
+  "lon": 7.4342763,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 2584065289,
+  "lat": 46.9479232,
+  "lon": 7.4464275,
+  "tags": {
+    "amenity": "fountain",
+    "artist:wikidata": "Q679296",
+    "artist_name": "Hans Gieng",
+    "artwork_type": "sculpture/fountain",
+    "brand": "ewb",
+    "description:de": "Der Schützenbrunnen steht am östlichen Ende der Marktgasse in der Berner Altstadt und gehört zu den Figurenbrunnen aus dem 16. Jahrhundert. Er steht unter Kulturgüterschutz;KGS-Nr. 648.",
+    "drinking_water": "yes",
+    "ele": "541",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Bern,_Schützenbrunnen,_2014,_5.jpg/401px-Bern,_Schützenbrunnen,_2014,_5.jpg",
+    "loc_ref": "BRU 008 Schützenbrunnen",
+    "location:description:de": "In der Gassenmitte vor dem Gebäude Marktgasse 16, 3011 Bern.",
+    "name": "Schützenbrunnen",
+    "name:de": "Schützenbrunnen",
+    "name:fr": "Fontaine arquebusier",
+    "note": "KGS-Nr: Nummer des Kulturgutes, zu finden in den KGS-Listen des Bundes und der Kantone.",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "ref:kgs": "648",
+    "source": "Orthofotos Bern and survey",
+    "start_date": "1543",
+    "tourism": "artwork",
+    "wikidata": "Q1399560",
+    "wikimedia_commons": "Category:Schützenbrunnen (Bern)",
+    "wikipedia": "de:Schützenbrunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 2894071127,
+  "lat": 46.9464195,
+  "lon": 7.4445731,
+  "tags": {
+    "access": "yes",
+    "alt_name": "Zwillingsbrunnen Ost Bundeshaus",
+    "amenity": "fountain",
+    "covered": "yes",
+    "drinking_water": "yes",
+    "ele": "539.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Zwillingsbrunnen_Bundeshaus_01.jpg/800px-Zwillingsbrunnen_Bundeshaus_01.jpg",
+    "location:description:de": "In einer Nische östlich auf der Südseite des Parlamentsgebäudes Bundesplatz 3 in 3011 Bern.",
+    "name:description:de": "Zwillingsbrunnen Bundeshaus",
+    "operator": "Bund",
+    "owner": "Bund",
+    "source": "Survey",
+    "wikidata": "Q56721751",
+    "wikimedia_commons": "Category:Zwillingsbrunnen Bundeshaus (Parlamentsgebäude-Brunnen)"
+  }
+},
+{
+  "type": "node",
+  "id": 3085621235,
+  "lat": 46.9487320,
+  "lon": 7.4525826,
+  "tags": {
+    "alt_name": "Kanzleibrunnen",
+    "amenity": "fountain",
+    "artist:wikidata": "Q1912540",
+    "artist_name": "Max Fueter",
+    "artwork_type": "sculpture",
+    "description:de": "Brunnen mit ebenerdigem, achteckigem Becken und Stock mit kleinem runden Becken aus rotem Porphyr, darauf feuervergoldete Bronzeplastik \"Peitschenschwingender Hermes\" von 1942 gestaltet vom Berner Bildhauer und Plastiker Max Fueter (1898–1983)",
+    "drinking_water": "no",
+    "ele": "531",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Rathaushofbrunnen_02.jpg/399px-Rathaushofbrunnen_02.jpg",
+    "location:description:de": "Im Innenhof des Berner Rathauses Rathausplatz 2 in 3011 Bern",
+    "name": "Rathaushofbrunnen",
+    "operator": "Kanton Bern",
+    "owner": "Kanton Bern",
+    "source": "Survey",
+    "start_date": "1942",
+    "tourism": "artwork",
+    "wikidata": "Q2132659",
+    "wikimedia_commons": "Category:Rathaushofbrunnen (Hermes - Max Fueter 1942)",
+    "wikipedia": "de:Rathaushofbrunnen"
+  }
+},
+{
+  "type": "node",
+  "id": 3100178829,
+  "lat": 46.9471549,
+  "lon": 7.4523013,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "534.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/L%C3%B6sch-Brunnen_03.jpg/800px-L%C3%B6sch-Brunnen_03.jpg",
+    "location:description:de": "Auf der Münsterplattform an der westlichen Hausmauer des Gebäudes Münstergasse 3 in der Altstadt in 3011 Bern.",
+    "name": "Lösch-Brunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "wikidata": "Q28650354",
+    "wikimedia_commons": "Category:Lösch-Brunnen (Karl Indermühle 1927)"
+  }
+},
+{
+  "type": "node",
+  "id": 3225066058,
+  "lat": 46.9371775,
+  "lon": 7.3860772,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "562.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Brunnen_Zentrum_Kleefeld_04.jpg/800px-Brunnen_Zentrum_Kleefeld_04.jpg",
+    "location:description:de": "Im Innenhof Zentrum Kleefeld Mädergutstrasse 5 in 3018 Bern.",
+    "name:description:de": "Brunnen Zentrum Kleefeld",
+    "operator": "Energie Wasser Bern",
+    "wikidata": "Q56219920",
+    "wikimedia_commons": "Category:Brunnen Zentrum Kleefeld (Dorfplatzbrunnen)"
+  }
+},
+{
+  "type": "node",
+  "id": 3276445564,
+  "lat": 46.9457139,
+  "lon": 7.4269953,
+  "tags": {
+    "alt_name": "Brunnen Brunnmattschulhaus",
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description": "Historisch-topographisches Lexikon der Stadt Bern: http://archives-quickaccess.ch/bbb/lexikon/3510",
+    "drinking_water": "yes",
+    "ele": "530",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Brunnen_Brunnmattschulhaus_02.jpg/800px-Brunnen_Brunnmattschulhaus_02.jpg",
+    "local_ref": "BRU 132 B Effingerstrasse",
+    "location:description:de": "An der Effingerstrasse in der südöstlichen Ecke des Schulhauses Brunnmatt Brunnmattstrasse 16 in 3007 Bern.",
+    "name": "Küngsbrunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56450979",
+    "wikimedia_commons": "Category:Küngsbrunnen (Brunnen Brunnmattschulhaus)"
+  }
+},
+{
+  "type": "node",
+  "id": 3781715260,
+  "lat": 46.9322687,
+  "lon": 7.4257088,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3799423414,
+  "lat": 46.9303651,
+  "lon": 7.4861336,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3875874357,
+  "lat": 46.9381959,
+  "lon": 7.4238506,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "562.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Brunnen_Monreposweg_05.jpg/800px-Brunnen_Monreposweg_05.jpg",
+    "location:description:de": "Auf einer kleinen Aussichtsplattform nordöstlich des Wohngebäudes Monreposweg 24 in 3008 Bern.",
+    "name:description:de": "Brunnen Monreposweg",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56071418",
+    "wikimedia_commons": "Category:Brunnen Monreposweg (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4191334284,
+  "lat": 46.9257918,
+  "lon": 7.3793180,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 4396720553,
+  "lat": 46.9191454,
+  "lon": 7.4385256,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "fountain": "nozzle",
+    "material": "concrete"
+  }
+},
+{
+  "type": "node",
+  "id": 4454775489,
+  "lat": 46.9355266,
+  "lon": 7.4285489,
+  "tags": {
+    "amenity": "fountain",
+    "artist:wikidata": "Q55815068",
+    "artist_name": "Walter Schnegg",
+    "artwork_type": "sculpture",
+    "brand": "ewb",
+    "description:de": "Brunnen mit flachem, länglichem Becken auf massivem Unterbau, darüber Wassereinlass und Skulptur \"Fuchs\" (beschädigt, ohne Ohren) aus Hartsteingranit von 1954 vom Berner Bildhauer Walter Schnegg (1903–1990).",
+    "drinking_water": "yes",
+    "ele": "569.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Fuchsbrunnen_02.jpg/800px-Fuchsbrunnen_02.jpg",
+    "location:description:de": "Im östlichen Teil des Steinhölzliwaldes, Luftlinie ungefähr 120 Meter westsüdwestlich vom Bahnhof Bern-Weissenstein in 3007 Bern.",
+    "name": "Fuchsbrunnen",
+    "operator": "Energie Wasser Bern",
+    "source": "Survey",
+    "start_date": "1954",
+    "tourism": "artwork",
+    "wikidata": "Q55726309",
+    "wikimedia_commons": "Category:Fuchsbrunnen Steinhölzliwald (Walter Schnegg 1954)"
+  }
+},
+{
+  "type": "node",
+  "id": 4827648221,
+  "lat": 46.9149537,
+  "lon": 7.3802235,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 4974895966,
+  "lat": 46.9675237,
+  "lon": 7.4606831,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Wankdorfallee-Trinkbrunnen_V_01.jpg/800px-Wankdorfallee-Trinkbrunnen_V_01.jpg",
+    "location:description:de": "In der Mitte der Wankdorfallee zwischen Gebäude Stauffacherstrasse 82 und Wankdorfallee 3b in 3014 Bern.",
+    "name:description:de": "Wankdorfallee-Trinkbrunnen V",
+    "wikidata": "Q56651413",
+    "wikimedia_commons": "Category:Wankdorfallee-Trinkbrunnen I - V (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4974895995,
+  "lat": 46.9677322,
+  "lon": 7.4616944,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Wankdorfallee-Trinkbrunnen_IV_03.jpg/800px-Wankdorfallee-Trinkbrunnen_IV_03.jpg",
+    "location:description:de": "In der Mitte der Wankdorfallee zwischen Gebäude Wankdorfallee 3 und 4 in 3014 Bern.",
+    "name:description:de": "Wankdorfallee-Trinkbrunnen IV",
+    "wikidata": "Q56651413",
+    "wikimedia_commons": "Category:Wankdorfallee-Trinkbrunnen I - V (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4974901140,
+  "lat": 46.9680421,
+  "lon": 7.4629362,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Wankdorfallee-Trinkbrunnen_II_02.jpg/800px-Wankdorfallee-Trinkbrunnen_II_02.jpg",
+    "location:description:de": "In der Mitte der Wankdorfallee zwischen Gebäude Hilfikerstrasse 1b und 3h in 3014 Bern.",
+    "name:description:de": "Wankdorfallee-Trinkbrunnen II",
+    "wikidata": "Q56651413",
+    "wikimedia_commons": "Category:Wankdorfallee-Trinkbrunnen I - V (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4974901141,
+  "lat": 46.9681638,
+  "lon": 7.4633171,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Wankdorfallee-Trinkbrunnen_I_02.jpg/800px-Wankdorfallee-Trinkbrunnen_I_02.jpg",
+    "location:description:de": "In der Mitte der Wankdorfallee zwischen Gebäude Hilfikerstrasse 1 und 3 in 3014 Bern.",
+    "name:description:de": "Wankdorfallee-Trinkbrunnen I",
+    "wikidata": "Q56651413",
+    "wikimedia_commons": "Category:Wankdorfallee-Trinkbrunnen I - V (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4974901142,
+  "lat": 46.9679294,
+  "lon": 7.4623725,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Wankdorfallee-Trinkbrunnen_III_02.jpg/800px-Wankdorfallee-Trinkbrunnen_III_02.jpg",
+    "location:description:de": "In der Mitte der Wankdorfallee zwischen Gebäude Wankdorfallee 4c und 5 in 3014 Bern.",
+    "name:description:de": "Wankdorfallee-Trinkbrunnen III",
+    "wikidata": "Q56651413",
+    "wikimedia_commons": "Category:Wankdorfallee-Trinkbrunnen I - V (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 4976131401,
+  "lat": 46.9436223,
+  "lon": 7.4495820,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description": "Der Trinkbrunnen Helvetiaplatz ist ein Trinkbrunnen aus Gusseisen von 1899 mit zwei kleinen Hundebrünnlein unten links und rechts unten am Sockel, mit Hersteller-Plaquette \"BOPP & REUTHER MANNHEIM\".",
+    "drinking_water": "yes",
+    "ele": "530",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Trinkbrunnen_Helvetiaplatz_01.jpg/960px-Trinkbrunnen_Helvetiaplatz_01.jpg",
+    "loc_ref": "BRU 096 Trinkbrunnen",
+    "location:description:de": "Auf dem Helvetiaplatz südöstlich des Welttelegraphen-Denkmals vor dem östlichen Eingangstor zum Bernischen Historischen Museum Helvetiaplatz 5 in 3005 Bern.",
+    "man_made": "drinking_fountain",
+    "name:description:de": "Trinkbrunnen Helvetiaplatz",
+    "note": "Bauinventar Helvetiaplatz: http://archives-quickaccess.ch/bbb/lexikon/3044",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56633192",
+    "wikimedia_commons": "Category:Trinkbrunnen Helvetiaplatz (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5017775711,
+  "lat": 46.9300260,
+  "lon": 7.4871686,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5017785110,
+  "lat": 46.9286865,
+  "lon": 7.4823164,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 5017785111,
+  "lat": 46.9286240,
+  "lon": 7.4818371,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 5110780326,
+  "lat": 46.9760281,
+  "lon": 7.4384836,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "fountain": "running"
+  }
+},
+{
+  "type": "node",
+  "id": 5127958165,
+  "lat": 46.9701338,
+  "lon": 7.4065867,
+  "tags": {
+    "access": "permissive",
+    "amenity": "fountain",
+    "bottle": "yes",
+    "drinking_water": "yes",
+    "fee": "no",
+    "lit": "no",
+    "ownership": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 5134975925,
+  "lat": 46.9087034,
+  "lon": 7.4472058,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 5148254827,
+  "lat": 46.9417156,
+  "lon": 7.4325482,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "524",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Brunnen_Gr%C3%BCnanlage_M%C3%BChlemattstrasse_04.jpg/800px-Brunnen_Gr%C3%BCnanlage_M%C3%BChlemattstrasse_04.jpg",
+    "location:description:de": "In der Mitte der Grünanlage Mühlemattstrasse westlich des Wohnhauses Mühlemattstrasse 45 in 3007 Bern.",
+    "name:description:de": "Brunnen Grünanlage Mühlemattstrasse",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56027690",
+    "wikimedia_commons": "Category:Brunnen Grünanlage Mühlemattstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5243231456,
+  "lat": 46.9377301,
+  "lon": 7.3951168,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description:de": "Brunnen mit achteckigem Becken aus Stein und verziertem Brunnenstock aus Gusseisen auf Podest aus Beton.",
+    "drinking_water": "yes",
+    "ele": "561",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Brunnen_Bahnhofplatz_B%C3%BCmpliz_S%C3%BCd_07.jpg/800px-Brunnen_Bahnhofplatz_B%C3%BCmpliz_S%C3%BCd_07.jpg",
+    "loc_ref": "BRU 265 Brunnen Bahnhofplatz",
+    "location:description:de": "Auf dem Areal des Bahnhofplatzes Bümpliz Süd gegenüber dem Bahnhofgebäude Bümplizstrasse 202 in 3018 Bern.",
+    "name:description:de": "Brunnen Bahnhofplatz Bümpliz Süd",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q55714212",
+    "wikimedia_commons": "Category:Brunnen Bahnhofplatz Bümpliz Süd"
+  }
+},
+{
+  "type": "node",
+  "id": 5302369294,
+  "lat": 46.9463218,
+  "lon": 7.4268856,
+  "tags": {
+    "alt_name": "Brunnhaus-Brunnen",
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "532.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brunnhaus-Brunnen_04.jpg/800px-Brunnhaus-Brunnen_04.jpg",
+    "loc_ref": "BRU 157 Küngsbrunnen",
+    "location:description:de": "Auf der Südseite des Brunnenpumphauses Brunnmattstrasse 10 in 3007 Bern.",
+    "name": "Kleiner Küngsbrunnen",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56223206",
+    "wikimedia_commons": "Category:Kleiner Küngsbrunnen (Brunnhaus-Brunnen)"
+  }
+},
+{
+  "type": "node",
+  "id": 5344650914,
+  "lat": 46.9485093,
+  "lon": 7.4579703,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description:de": "Wandbrunnen von 1847 mit zwei Nebenbecken direkt unter der Nydeggbrücke an einem ihrer Pfeiler.",
+    "drinking_water": "yes",
+    "ele": "499.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mattenengebrunnen_02.jpg/800px-Mattenengebrunnen_02.jpg",
+    "layer": "-4",
+    "location:description:de": "Unter der Nydeggbrücke zwischen dem Haus Mattenenge 7 und Gerberngasse 1 im Mattequartier in der Altstadt in 3011 Bern.",
+    "name": "Mattenengebrunnen",
+    "old_name": "Staldenbrünnlein",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q55411751",
+    "wikimedia_commons": "Category:Mattenengebrunnen (Staldenbrünnlein)"
+  }
+},
+{
+  "type": "node",
+  "id": 5520682603,
+  "lat": 46.9423359,
+  "lon": 7.4409844,
+  "tags": {
+    "addr:full": "Brückenstrasse 69-73, 3005 Bern",
+    "amenity": "fountain",
+    "artist:wikidata": "Q1912540",
+    "artist_name": "Max Fueter",
+    "artwork_type": "sculpture",
+    "description:de": "Eleganter Brunnen auf einem Fuss, darauf kelchartiges Becken aus Messing mit Skulptur \"Das Geheimnis\" - zwei sich nähernde Frauenfiguren - in dessen Mitte aus Bronze, wurde 1952 vom Berner Künstler Max Fueter (1898–1983) kreiert.",
+    "drinking_water": "yes",
+    "ele": "504.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Brunnen_Marzilischulhaus_02.jpg/800px-Brunnen_Marzilischulhaus_02.jpg",
+    "location:description:de": "Im Innenhof des Schulhauses Marzili Brückenstrasse 69-73 in 3005 Bern",
+    "name": "Brunnen Marzilischulhaus / Das Geheimnis",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Bern",
+    "start_date": "1952",
+    "tourism": "artwork",
+    "wikidata": "Q55721596",
+    "wikimedia_commons": "Category:Brunnen Marzilischulhaus (Das Geheimnis - Max Fueter 1952)"
+  }
+},
+{
+  "type": "node",
+  "id": 5522612439,
+  "lat": 46.9463627,
+  "lon": 7.4439509,
+  "tags": {
+    "access": "yes",
+    "alt_name": "Zwillingsbrunnen West Bundeshaus",
+    "amenity": "fountain",
+    "covered": "yes",
+    "drinking_water": "yes",
+    "ele": "539.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Zwillingsbrunnen_Bundeshaus_07.jpg/800px-Zwillingsbrunnen_Bundeshaus_07.jpg",
+    "location:description:de": "In einer Nische westlich auf der Südseite des Parlamentsgebäudes Bundesplatz 3 in 3011 Bern.",
+    "name:description:de": "Zwillingsbrunnen Bundeshaus",
+    "operator": "Bund",
+    "owner": "Bund",
+    "source": "Survey",
+    "wikidata": "Q56721751",
+    "wikimedia_commons": "Category:Zwillingsbrunnen Bundeshaus (Parlamentsgebäude-Brunnen)"
+  }
+},
+{
+  "type": "node",
+  "id": 5536622262,
+  "lat": 46.9442552,
+  "lon": 7.4659225,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Trinkbrunnen mit abgesetztem, kegelförmigen Becken auf runder Grundplatte aus Beton, mit einer gebogenen Brunnenröhre aus Messing.",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Brunnen_Spielplatz_Egelsee_03.jpg/800px-Brunnen_Spielplatz_Egelsee_03.jpg",
+    "local_ref": "BRU 109 Trinkb Spielplatz",
+    "location:description:de": "Auf dem Spielplatz Egelsee westlich gegenüber dem Wohngebäude Ankerstrasse 7 in 3006 Bern.",
+    "name:description:de": "Brunnen Spielplatz Egelsee",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56190630",
+    "wikimedia_commons": "Category:Brunnen Spielplatz Egelsee (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5543027356,
+  "lat": 46.9493492,
+  "lon": 7.4435865,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "description:de": "Kleiner Trinkbrunnen mit halbrundem Becken und Stock aus Kalkstein mit Wasserröhre aus Messing.",
+    "drinking_water": "yes",
+    "ele": "540.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Brunnen_Aarbergergasse_03.jpg/800px-Brunnen_Aarbergergasse_03.jpg",
+    "location:description:de": "Vor dem Gebäude Aarbergergasse 5 in der Altstadt in 3011 Bern.",
+    "name:description:de": "Brunnen Aarbergergasse",
+    "note": "Bauinventar: http://bauinventar.bern.ch/pdfs/aarbergergasse_5.pdf",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q55456467",
+    "wikimedia_commons": "Category:Brunnen Aarbergergasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5543349328,
+  "lat": 46.9488646,
+  "lon": 7.4529263,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Die älteste noch erhaltene Quellbrunnen-Anlage der Stadt Bern datiert aus dem 13. Jahrhundert, ist jedoch nicht mehr in Betrieb. Besichtigung während den Bürozeiten der Staatskanzlei.",
+    "drinking_water": "no",
+    "historic": "archaeological_site",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lenbrunnen_05.jpg/800px-Lenbrunnen_05.jpg",
+    "indoor": "yes",
+    "location:description:de": "Im Gebäude der Staatskanzlei des Kantons Bern an der Postgasse 68 in der Altstadt in 3011 Bern.",
+    "name": "Lenbrunnen",
+    "note": "Zugang via Staatskanzlei des Kantons Bern. - Brunnen nicht mehr in Betrieb",
+    "source": "survey",
+    "tourism": "attraction",
+    "wikidata": "Q50419479",
+    "wikimedia_commons": "Category:Lenbrunnen (Bern)",
+    "wikipedia": "de:Lenbrunnen"
+  }
+},
+{
+  "type": "node",
+  "id": 5545181059,
+  "lat": 46.9614375,
+  "lon": 7.4437936,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "517",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Jurastrasse_Brunnen_02.jpg/800px-Jurastrasse_Brunnen_02.jpg",
+    "location:description:de": "In einer überdeckten Nische südöstlich gegenüber dem Wohnhaus Jurastrasse 77 neben dem Gebäude Jurastrasse 52 in 3013 Bern.",
+    "name": "Jurastrasse Brunnen",
+    "note": "Brunnen ist nicht mehr in Betrieb; s. Bauinventar Bern http://bauinventar.bern.ch/pdfs/jurastrasse_nn.pdf",
+    "source": "Survey",
+    "wikidata": "Q56063382",
+    "wikimedia_commons": "Category:Jurastrasse Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5557480028,
+  "lat": 46.9562421,
+  "lon": 7.4309571,
+  "tags": {
+    "amenity": "fountain",
+    "bottle": "yes",
+    "brand": "ewb",
+    "description:de": "Brunnen von 1870 aus Kalkstein mit achteckigem Becken und Stock mit abgerundeter Abdeckung, sowie einer Brunneröhre aus Messing.",
+    "drinking_water": "yes",
+    "ele": "557",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Brunnen_T%C3%BCrmlischulhaus_05.jpg/800px-Brunnen_T%C3%BCrmlischulhaus_05.jpg",
+    "loc_ref": "BRU 177 Brunnen VS Länggasse",
+    "location:description:de": "Auf dem Schulhof südlich des Türmlischulhauses Neufeldstrasse 20 in 3012 Bern.",
+    "name:description:de": "Brunnen Türmlischulhaus",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "start_date": "1870",
+    "wikidata": "Q55759478",
+    "wikimedia_commons": "Category:Brunnen Türmlischulhaus (Schulhausbrunnen)"
+  }
+},
+{
+  "type": "node",
+  "id": 5560577025,
+  "lat": 46.9504455,
+  "lon": 7.4532811,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain",
+    "description:de": "Der Brunnen hat ein vom Grund abgesetztes, längsovales Brunnenbecken mit angesetztem rechteckigen Stock aus Kalkstein mit Brunnenröhre aus Metall und Steinskulptur als Abschluss.",
+    "ele": "498.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Brunnen_Altenbergstrasse_29_04.jpg/800px-Brunnen_Altenbergstrasse_29_04.jpg",
+    "location:description:de": "Auf dem Vorplatz östlich des Gebäudes Altenbergstrasse 29 in 3013 Bern.",
+    "name:description:de": "Brunnen Altenbergstrasse",
+    "note": "Bauinventar: https://bauinventar.bern.ch/pdfs/altenbergstrasse_29_29p.pdf",
+    "operator": "Privat",
+    "source": "Survey and Orthofotos Bern",
+    "wikidata": "Q55686910",
+    "wikimedia_commons": "Category:Brunnen Altenbergstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5565381964,
+  "lat": 46.9667039,
+  "lon": 7.4817746,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "561.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Doppelbrunnen_Ost_Zentralgeb%C3%A4ude_Waldau_01.jpg/800px-Doppelbrunnen_Ost_Zentralgeb%C3%A4ude_Waldau_01.jpg",
+    "location:description:de": "Östlich vor dem Zentralgebäude Klinik Waldau Bolligenstrasse 117 in 3006 Bern.",
+    "name:description:de": "Doppelbrunnen Ost Zentralgebäude Waldau",
+    "operator": "Universitäre Psychiatrische Dienste Bern (UPD) AG",
+    "owner": "Universitäre Psychiatrische Dienste Bern (UPD) AG",
+    "source": "Survey and Orthofotos StadtBern",
+    "wikidata": "Q56229858",
+    "wikimedia_commons": "Category:Doppelbrunnen Ost Zentralgebäude Waldau (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5565381971,
+  "lat": 46.9667664,
+  "lon": 7.4812745,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "561.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Doppelbrunnen_West_Zentralgeb%C3%A4ude_Waldau_01.jpg/399px-Doppelbrunnen_West_Zentralgeb%C3%A4ude_Waldau_01.jpg",
+    "location:description:de": "Westlich vor dem Zentralgebäude Klinik Waldau Bolligenstrasse 117 in 3006 Bern.",
+    "name:description:de": "Doppelbrunnen West Zentralgebäude Waldau",
+    "operator": "Universitäre Psychiatrische Dienste Bern (UPD) AG",
+    "owner": "Universitäre Psychiatrische Dienste Bern (UPD) AG",
+    "source": "Survey and Orthofotos StadtBern",
+    "wikidata": "Q56230914",
+    "wikimedia_commons": "Category:Doppelbrunnen West Zentralgebäude Waldau (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5569004402,
+  "lat": 46.9631668,
+  "lon": 7.4565823,
+  "tags": {
+    "amenity": "fountain",
+    "artist:wikidata": "Q1912540",
+    "artist_name": "Max Fueter",
+    "artwork_type": "statue",
+    "description:de": "Flaches, ovales Becken auf niedrigem Sockel, in der Mitte Steinskulptur \"Die kluge und die törichte Jungfrau\" aus Kalkstein, unten mit zwei Wassereinlässen, gestaltet 1956 vom Berner Künstler Max Fueter (1898–1983).",
+    "drinking_water": "no",
+    "ele": "554.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Zierbrunnen_Markuskirche_06.jpg/800px-Zierbrunnen_Markuskirche_06.jpg",
+    "location:description:de": "Auf dem Hof nördlich vor der Markuskirche Tellstrasse 33 in 3014 Bern.",
+    "material": "limestone",
+    "name": "Hofbrunnen Markuskirche / Die kluge und die törichte Jungfrau",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "start_date": "1956",
+    "tourism": "artwork",
+    "wikidata": "Q55726055",
+    "wikimedia_commons": "Category:Hofbrunnen Markuskirche (Die kluge und die törichte Jungfrau - Max Fueter 1956)"
+  }
+},
+{
+  "type": "node",
+  "id": 5579390075,
+  "lat": 46.9511679,
+  "lon": 7.4665346,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "588.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Brunnen_Bitziusschulhaus_04.jpg/800px-Brunnen_Bitziusschulhaus_04.jpg",
+    "location:description:de": "Im Hof auf der Ostseite des Bitziusschulhauses Bitziusstrasse 15 in 3006 Bern.",
+    "name:description:de": "Hofbrunnen Bitziusschulhaus",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q55869753",
+    "wikimedia_commons": "Category:Hofbrunnen Bitziusschulhaus (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5580626881,
+  "lat": 46.9393178,
+  "lon": 7.4536339,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "533.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Brunnen_Jubil%C3%A4umsplatz_02.jpg/800px-Brunnen_Jubil%C3%A4umsplatz_02.jpg",
+    "location:description:de": "Beim Jubiläumsplatz im Garten des Wohnhauses Kirchenfeldstrasse 52b in 3005 Bern.",
+    "name:description:de": "Brunnen Jubiläumsplatz",
+    "note": "Ausser Betrieb.",
+    "operator": "Privat",
+    "source": "Survey",
+    "wikidata": "Q56046848",
+    "wikimedia_commons": "Category:Brunnen Jubiläumsplatz (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5581009552,
+  "lat": 46.9441379,
+  "lon": 7.4632510,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "551.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Brunnen_Schreiten_und_Gleiten_03.jpg/800px-Brunnen_Schreiten_und_Gleiten_03.jpg",
+    "location:description:de": "Am Weg Schreiten und Gleiten gegenüber dem Wohnhaus Muristrasse 21 in 3006 Bern.",
+    "name:description:de": "Brunnen Schreiten und Gleiten",
+    "operator": "Privat",
+    "source": "Survey",
+    "wikidata": "Q56188070",
+    "wikimedia_commons": "Category:Brunnen Schreiten und Gleiten (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5581009553,
+  "lat": 46.9442609,
+  "lon": 7.4623928,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "554.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Brunnen_Muristrasse_04.jpg/800px-Brunnen_Muristrasse_04.jpg",
+    "location:description:de": "Auf dem Vorplatz des Gebäudes Muristrasse 28 in 3006 Bern.",
+    "name:description:de": "Brunnen Muristrasse",
+    "operator": "Privat",
+    "source": "Survey",
+    "wikidata": "Q56109907",
+    "wikimedia_commons": "Category:Brunnen Muristrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5582229886,
+  "lat": 46.9382488,
+  "lon": 7.4554228,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "533.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Brunnen_D%C3%A4hlh%C3%B6lzliwald_04.jpg/800px-Brunnen_D%C3%A4hlh%C3%B6lzliwald_04.jpg",
+    "location:description:de": "Ungefähr 150 Meter im Dählhölzliwald südöstlich von der Recycling-Sammelstelle Jubiläumsplatz 20 in 3005 Bern.",
+    "name:description:de": "Brunnen Dählhölzliwald",
+    "operator": "Energie Wasser Bern",
+    "owner": "Burgergemeinde Bern",
+    "source": "Survey",
+    "wikidata": "Q56000148",
+    "wikimedia_commons": "Category:Brunnen Dählhölzliwald (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5583161226,
+  "lat": 46.9393156,
+  "lon": 7.4469553,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "522.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Brunnen_Kirchenfeldschulhaus_04.jpg/800px-Brunnen_Kirchenfeldschulhaus_04.jpg",
+    "location:description:de": "Im Hof auf der Westseite des Kirchenfeldschulhaus Aegertenstrasse 46 in 3005 Bern.",
+    "name:description:de": "Hofbrunnen Kirchenfeldschulhaus",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56057179",
+    "wikimedia_commons": "Category:Hofbrunnen Kirchenfeldschulhaus (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5586317396,
+  "lat": 46.9433133,
+  "lon": 7.4437076,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "502",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Marzilibrunnen_03.jpg/800px-Marzilibrunnen_03.jpg",
+    "location:description:de": "Auf dem Vorplatz südlich des Gebäudes Marzilistrasse 25 in 3005 Bern.",
+    "name": "Marzilibrunnen",
+    "note": "http://archives-quickaccess.ch/bbb/lexikon/315165",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "start_date": "1914",
+    "wikidata": "Q56490004",
+    "wikimedia_commons": "Category:Marzilibrunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5588589853,
+  "lat": 46.9505157,
+  "lon": 7.4324481,
+  "tags": {
+    "access": "private",
+    "alt_name": "Blaugrüner Blick",
+    "amenity": "fountain",
+    "artist:wikidata": "Q56863319",
+    "artist_name": "Luciano Andreani",
+    "artwork_type": "installation",
+    "drinking_water": "no",
+    "ele": "564.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Favorite-Nischenbrunnen_03.jpg/800px-Favorite-Nischenbrunnen_03.jpg",
+    "location:description:de": "In der Stützmauer zum Vorplatz an der Nordseite der Villa Favorite Schanzeneckstrasse 25 in 3012 Bern.",
+    "name": "Favorite-Nischenbrunnen / Blaugrüner Blick",
+    "operator": "Privat",
+    "owner": "Privat",
+    "source": "Survey",
+    "start_date": "1868 / 2003",
+    "tourism": "artwork",
+    "wikidata": "Q56239582",
+    "wikimedia_commons": "Category:Favorite-Nischenbrunnen (Blaugrüner Blick - Luciano Andreani 2003)"
+  }
+},
+{
+  "type": "node",
+  "id": 5589053495,
+  "lat": 46.9504912,
+  "lon": 7.4321974,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "564.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Favorite-Sodbrunnen_01.jpg/800px-Favorite-Sodbrunnen_01.jpg",
+    "location:description:de": "Westlich der Villa Favorite vor dem Haus Schanzeneckstrasse 29 in 3012 Bern.",
+    "name": "Favorite-Sodbrunnen",
+    "note": "Ausser Betrieb - Bauinventar: http://bauinventar.bern.ch/pdfs/schanzeneckstrasse_25.pdf",
+    "operator": "Privat",
+    "owner": "Privat",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56239724",
+    "wikimedia_commons": "Category:Favorite-Sodbrunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5589284575,
+  "lat": 46.9598506,
+  "lon": 7.4464542,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Trinkbrunnen mit abgesetztem, kegelförmigen Becken auf runder Grundplatte aus Beton, mit einer gebogenen Brunnenröhre aus Messing.",
+    "drinking_water": "yes",
+    "ele": "542.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Brunnen_Spielplatz_Nordring%E2%81%84Dammweg_04.jpg/800px-Brunnen_Spielplatz_Nordring%E2%81%84Dammweg_04.jpg",
+    "location:description:de": "Auf dem Spielplatz Nordring/Dammweg nördlich des Unterstands Nordring 49 und gegenüber dem Haus Dammweg 51 in 3013 Bern.",
+    "name:description:de": "Brunnen Spielplatz Nordring⁄Dammweg",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56191980",
+    "wikimedia_commons": "Category:Brunnen Spielplatz Nordring⁄Dammweg (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5594592287,
+  "lat": 46.9359952,
+  "lon": 7.4299087,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Brunnen mit rechteckigem Becken aus Stein und verziertem Brunnenstock aus Gusseisen.",
+    "drinking_water": "no",
+    "ele": "550",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Brunnen_Bahnhof_Weissenb%C3%BChl_02.jpg/800px-Brunnen_Bahnhof_Weissenb%C3%BChl_02.jpg",
+    "location:description:de": "Auf dem Areal des Bahnhofplatzes nordnordwestlich des Bahnhofgebäudes Bern-Weissenbühl an der Südbahnhofstrasse 14 in 3007 Bern.",
+    "name:description:de": "Brunnen Bahnhof Weissenbühl",
+    "note": "Ausser Betrieb.",
+    "wikidata": "Q55714176",
+    "wikimedia_commons": "Category:Brunnen Bahnhof Weissenbühl (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5598660649,
+  "lat": 46.9457919,
+  "lon": 7.4220098,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "555",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Inselheimbrunnen_07.jpg/800px-Inselheimbrunnen_07.jpg",
+    "location:description:de": "Am Rande des Vorplatzes von Inselheim Freiburgstrasse 41 und Inselschür Freiburgstrasse 41a in 3010 Bern.",
+    "name": "Inselheimbrunnen",
+    "note": "Erwähnt in http://bauinventar.bern.ch/pdfs/freiburgstrasse_41.pdf",
+    "operator": "Inselspital",
+    "owner": "Inselspital",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56063011",
+    "wikimedia_commons": "Category:Inselheimbrunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5600619002,
+  "lat": 46.9339141,
+  "lon": 7.4458759,
+  "tags": {
+    "alt_name": "Zierbrunnen Schönau",
+    "amenity": "fountain",
+    "artist:wikidata": "Q55815068",
+    "artist_name": "Walter Schnegg",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "505.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Pumpwerk_Sch%C3%B6nau-Brunnen_04.jpg/800px-Pumpwerk_Sch%C3%B6nau-Brunnen_04.jpg",
+    "location:description:de": "Nördlich vor dem Pumpwerk Schönau an der Aare am Lindenauweg 10 in 3007 Bern.",
+    "name": "Pumpwerk Schönau-Brunnen",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "wikidata": "Q55815813",
+    "wikimedia_commons": "Category:Pumpwerk Schönau-Brunnen (Zierbrunnen Schönau - Fisch und Frosch - Walter Schnegg 1950)"
+  }
+},
+{
+  "type": "node",
+  "id": 5600693231,
+  "lat": 46.9378525,
+  "lon": 7.4428990,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gaswerkareal-Brunnen_05.jpg/800px-Gaswerkareal-Brunnen_05.jpg",
+    "location:description:de": "Auf dem Areal ungefähr 60 Meter Luftlinie südöstlich des Gaskessels Sandrainstrasse 25 in 3007 Bern.",
+    "name": "Gaswerkareal-Brunnen",
+    "note": "Ausser Betrieb",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56242708",
+    "wikimedia_commons": "Category:Gaswerkareal-Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5605396224,
+  "lat": 46.9460630,
+  "lon": 7.4201882,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "550",
+    "fountain": "drinking",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Brunnen_Freiburgstrasse%E2%81%84Friedb%C3%BChlstrasse_06.jpg/800px-Brunnen_Freiburgstrasse%E2%81%84Friedb%C3%BChlstrasse_06.jpg",
+    "location:description:de": "Ecke Freibugstrasse Friedbühlstrasse vor dem Wohngebäude Freiburgstrasse 43 in 3008 Bern.",
+    "name:description:de": "Brunnen Freiburgstrasse Ecke Friedbühlstrasse",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56026457",
+    "wikimedia_commons": "Category:Brunnen Freiburgstrasse Ecke Friedbühlstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5608101100,
+  "lat": 46.9639610,
+  "lon": 7.4525001,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wyler-Brunnen_02.jpg/800px-Wyler-Brunnen_02.jpg",
+    "location:description:de": "Auf der Veranda vor dem Gebäude Wylerringstrasse 58 in 3014 Bern.",
+    "name": "Wyler-Brunnen",
+    "source": "Survey",
+    "wikidata": "Q56654517",
+    "wikimedia_commons": "Category:Wyler-Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5608226493,
+  "lat": 46.9572831,
+  "lon": 7.4481402,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "540.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pumpbrunnen_Breitenrainpark_04.jpg/800px-Pumpbrunnen_Breitenrainpark_04.jpg",
+    "location:description:de": "In der westlichen Ecke des Breitenrainparks gegenüber der Turhalle Breitenrain Turnweg 3 in 3013 Bern.",
+    "name:description:de": "Pumpbrunnen Breitenrainpark",
+    "note": "Ausser Betrieb. Pumpkurbel fehlt.",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56550345",
+    "wikimedia_commons": "Category:Pumpbrunnen Breitenrainpark (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5613870325,
+  "lat": 46.9416097,
+  "lon": 7.4217322,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "551",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Brunnen_Munzingerschulhaus_04.jpg/800px-Brunnen_Munzingerschulhaus_04.jpg",
+    "location:description:de": "Auf dem Areal des Munzingerschulhauses an der Ostseite des Schulgartenhauses Munzingerstrasse 11a in 3007 Bern.",
+    "name:description:de": "Brunnen Munzingerschulhaus",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56071698",
+    "wikimedia_commons": "Category:Brunnen Munzingerschulhaus (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5618380317,
+  "lat": 46.9360130,
+  "lon": 7.4254313,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "561",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Spielbrunnen_Steinh%C3%B6lzli_01.jpg/800px-Spielbrunnen_Steinh%C3%B6lzli_01.jpg",
+    "location:description:de": "Am nördlichen Ende des Spielplatzes Steinhölzli ungefähr 15 Meter südlich des Steinhölzlibrunnens vor dem Gebäude Schwarzenburgstrasse 59 in 3008 Bern.",
+    "name:description:de": "Spielbrunnen Spielplatz Steinhölzli",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "start_date": "2014",
+    "wikidata": "Q56871068",
+    "wikimedia_commons": "Category:Spielbrunnen Spielplatz Steinhölzli (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5625256023,
+  "lat": 46.9389894,
+  "lon": 7.4412324,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "no",
+    "ele": "503",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Brunnen_Sandrainstrasse_17_01.jpg/800px-Brunnen_Sandrainstrasse_17_01.jpg",
+    "location:description:de": "Hinter Hecke zur Sandrainstrasse hin vor Gebäude Sandrainstrasse 17 in 3007 Bern.",
+    "name:description:de": "Brunnen Sandrainstrasse",
+    "note": "Liegenschaftsverwaltung Energie Wasser Bern hat Betrieb durch Energie Wasser Bern eingestellt.",
+    "operator": "Energie Wasser Bern",
+    "owner": "Energie Wasser Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56154088",
+    "wikimedia_commons": "Category:Brunnen Sandrainstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5625256025,
+  "lat": 46.9393231,
+  "lon": 7.4414676,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "no",
+    "ele": "503",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Hofbrunnen_Sandrainstrasse_15_02.jpg/800px-Hofbrunnen_Sandrainstrasse_15_02.jpg",
+    "location:description:de": "Im Hof an der Ostseite des Gebäudes Sandrainstrasse 15 in 3007 Bern.",
+    "name:description:de": "Hofbrunnen Sandrainstrasse",
+    "note": "Liegenschaftsverwaltung Energie Wasser Bern hat Betrieb durch Energie Wasser Bern eingestellt.",
+    "operator": "Energie Wasser Bern",
+    "owner": "Energie Wasser Bern",
+    "source": "survey",
+    "wikidata": "Q56154412",
+    "wikimedia_commons": "Category:Hofbrunnen Sandrainstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5625304884,
+  "lat": 46.9419950,
+  "lon": 7.4387043,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "504",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Brunnen_Br%C3%BCckenstrasse_04.jpg/800px-Brunnen_Br%C3%BCckenstrasse_04.jpg",
+    "location:description:de": "Auf der Grünfläche südlich vor den Kindergärten Marzili I und II Brückenstrasse 70 in 3005 Bern.",
+    "name:description:de": "Brunnen Brückenstrasse",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q55896224",
+    "wikimedia_commons": "Category:Brunnen Brückenstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5625304885,
+  "lat": 46.9427892,
+  "lon": 7.4436251,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "502",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/F%C3%BCrst-Brunnen_04.jpg/800px-F%C3%BCrst-Brunnen_04.jpg",
+    "location:description:de": "In einer Nische zur Strasse hin des Gebäudes Marzilistrasse 27a in 3005 Bern.",
+    "name": "Fürst-Brunnen",
+    "operator": "Privat",
+    "owner": "Privat",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56242207",
+    "wikimedia_commons": "Category:Fürst-Brunnen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5628656368,
+  "lat": 46.9752631,
+  "lon": 7.4500628,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "546",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Brunnen_Schulheim_Rossfeld_02.jpg/800px-Brunnen_Schulheim_Rossfeld_02.jpg",
+    "location:description:de": "Beim nordwestlichen Ende des Schulheims Rossfeld Rossfeldstrasse 111 in 3004 Bern.",
+    "name:description:de": "Brunnen Schulheim Rossfeld",
+    "operator:type": "private",
+    "wikidata": "Q56188203",
+    "wikimedia_commons": "Category:Brunnen Schulheim Rossfeld (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5630786688,
+  "lat": 46.9456241,
+  "lon": 7.4406406,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "546",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Brunnen_Kleine_Schanze_07.jpg/800px-Brunnen_Kleine_Schanze_07.jpg",
+    "loc_ref": "BRU 004 Trinkb. Kleine Schanze",
+    "location:description:de": "Auf der erhöhten Terrasse in der Mitte des Parks Kleine Schanze nördlich des Pavillons Bundesgasse 5 in 3011 Bern.",
+    "name:description:de": "Brunnen Kleine Schanze",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56064642",
+    "wikimedia_commons": "Category:Brunnen Kleine Schanze (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5631767564,
+  "lat": 46.9006173,
+  "lon": 7.4319508,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "lit": "no",
+    "note": "Wasser ist abgestellt 08.2019",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 5638521740,
+  "lat": 46.9480049,
+  "lon": 7.4477852,
+  "tags": {
+    "amenity": "fountain",
+    "brand": "ewb",
+    "drinking_water": "yes",
+    "ele": "540.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pissoirbr%C3%BCnnli_01.jpg/800px-Pissoirbr%C3%BCnnli_01.jpg",
+    "loc_ref": "BRU 234 Pissoirb Zytglogge",
+    "location:description:de": "An der Aussenseite des Pissoirs an der Nordseite des Zytglogge gegenüber den Gebäuden Zytgloggelaube 4 und 6 in 3011 Bern.",
+    "name": "Pissoirbrünnli",
+    "operator": "Energie Wasser Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56549472",
+    "wikimedia_commons": "Category:Pissoirbrünnli (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5642805102,
+  "lat": 46.9384097,
+  "lon": 7.3922484,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "561",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Brunnen_Statthalterschulhaus_02.jpg/800px-Brunnen_Statthalterschulhaus_02.jpg",
+    "location:description:de": "Unter einem offenen Unterstand mit Pultdach auf der Ostseite des Statthalterschulhauses Wangenstrasse 9-11 in 3018 Bern.",
+    "name:description:de": "Brunnen Statthalterschulhaus",
+    "note": "Ausser Betrieb.",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56197844",
+    "wikimedia_commons": "Category:Brunnen Statthalterschulhaus (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5642873770,
+  "lat": 46.9442455,
+  "lon": 7.3839383,
+  "tags": {
+    "amenity": "fountain",
+    "artist:wikidata": "Q56256920",
+    "artist_name": "Gottfried Obi",
+    "artwork_type": "mosaic",
+    "drinking_water": "no",
+    "ele": "559",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Brunnen_Stapfenackerschulhaus_04.jpg/800px-Brunnen_Stapfenackerschulhaus_04.jpg",
+    "location:description:de": "Im Innenhof an der südlichen Wand des Schulhauses Stapfenacker Brünnenstrasse 40 in 3018 Bern.",
+    "name": "Hofbrunnen Stapfenackerschulhaus / Spielende Kinder mit Hund",
+    "note": "Ausser Betrieb - Baubeschrieb: http://bauinventar.bern.ch/pdfs/bruennenstrasse_40.pdf",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "start_date": "1936",
+    "tourism": "artwork",
+    "wikidata": "Q56037467",
+    "wikimedia_commons": "Category:Hofbrunnen Stapfenackerschulhaus (Spielende Kinder mit Hund - Gottfried Obi 1936)"
+  }
+},
+{
+  "type": "node",
+  "id": 5644364369,
+  "lat": 46.9441582,
+  "lon": 7.4561027,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brunnen_Spielplatz_Gryphenh%C3%BCbeli_05.jpg/800px-Brunnen_Spielplatz_Gryphenh%C3%BCbeli_05.jpg",
+    "location:description:de": "Auf dem Spielplatz Gryphenhübeli an der Wand des Wohnhauses Gryphenhübeliweg 33 in 3006 Bern.",
+    "name:description:de": "Brunnen Spielplatz Gryphenhübeli",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56191232",
+    "wikimedia_commons": "Category:Brunnen Spielplatz Gryphenhübeli (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5644405473,
+  "lat": 46.9428084,
+  "lon": 7.4708431,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "557",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Brunnen_Sonnenhofschulhaus_03.jpg/800px-Brunnen_Sonnenhofschulhaus_03.jpg",
+    "location:description:de": "Auf dem Vorplatz westlich des Schulhauses Sonnenhof Jolimontstrasse 1 in 3006 Bern.",
+    "name:description:de": "Brunnen Sonnenhofschulhaus",
+    "note": "Ausser Betrieb",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56189124",
+    "wikimedia_commons": "Category:Brunnen Sonnenhofschulhaus (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5644409027,
+  "lat": 46.9423454,
+  "lon": 7.4709298,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "555",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Brunnen_Kindergarten_Sonnenhof_02.jpg/800px-Brunnen_Kindergarten_Sonnenhof_02.jpg",
+    "location:description:de": "Gegenüber dem Wohngebäude Kasthoferstrasse 32 auf der Südseite des Gebäudes Kindergärten Sonnenhof I + II Jolimontstrasse 1 in 3006 Bern.",
+    "name:description:de": "Brunnen Kindergarten Sonnenhof",
+    "note": "Ausser Betrieb",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56057143",
+    "wikimedia_commons": "Category:Brunnen Kindergarten Sonnenhof (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5650235480,
+  "lat": 46.9424557,
+  "lon": 7.4827611,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "554",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Brunnen_Schloss_Wittigkofen_Scheune_01.jpg/800px-Brunnen_Schloss_Wittigkofen_Scheune_01.jpg",
+    "location:description:de": "In der Südostecke der Scheune Schloss Wittigkofen Melchenbühlweg 137d in 3006 Bern.",
+    "name:description:de": "Brunnen Schloss Wittigkofen Scheune",
+    "note": "Bauinventar: http://bauinventar.bern.ch/pdfs/melchenbuehlweg_137d.pdf",
+    "operator": "Privat",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56162810",
+    "wikimedia_commons": "Category:Brunnen Schloss Wittigkofen Scheune (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5650269759,
+  "lat": 46.9408948,
+  "lon": 7.4847013,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "555",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Brunnen_Tiergehege_Pflegezentrum_Wittikofen_02.jpg/800px-Brunnen_Tiergehege_Pflegezentrum_Wittikofen_02.jpg",
+    "location:description:de": "Westlich des Melchenbühlwegs im Tiergehege beim Wohnkomplex Jupiterstrasse 65 in 3015 Bern.",
+    "name:description:de": "Brunnen Tiergehege Pflegezentrum Wittikofen",
+    "operator": "Privat",
+    "wikidata": "Q56199590",
+    "wikimedia_commons": "Category:Brunnen Tiergehege Pflegezentrum Wittikofen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5650492668,
+  "lat": 46.9485732,
+  "lon": 7.4235782,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "562.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Brunnen_reformierte_Inselkapelle_03.jpg/800px-Brunnen_reformierte_Inselkapelle_03.jpg",
+    "location:description:de": "Auf dem Areal des Inselspitals an der Südwestseite der reformierten Inselkapelle, Kreuzmattgasse 20 in 3010 Bern",
+    "name:description:de": "Brunnen reformierte Inselkapelle",
+    "note": "Ausser Betrieb",
+    "operator": "Inselspital",
+    "owner": "Inselspital",
+    "source": "Survey",
+    "wikidata": "Q56118689",
+    "wikimedia_commons": "Category:Brunnen reformierte Inselkapelle (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5666062242,
+  "lat": 46.9448033,
+  "lon": 7.4331067,
+  "tags": {
+    "amenity": "fountain",
+    "description:de": "Brunnen auf einem Fuss mit rundem, flachen Becken aus Kalkstein, dessen Innenseite mit graugelblichen Mosaiksteinchen ausgelegt ist, der nach innen gewölbte Rand trägt drei gleichmässig verteilte, gebogene Brunnenröhren aus Bronze. - Ausser Betrieb.",
+    "drinking_water": "no",
+    "ele": "526.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Brunnen_Belpstrasse_04.jpg/800px-Brunnen_Belpstrasse_04.jpg",
+    "layer": "-1",
+    "location:description:de": "Auf dem überdeckten Vorplatz des Gebäudes Belpstrasse 23 in 3007 Bern.",
+    "name:description:de": "Brunnen Belpstrasse",
+    "note": "Ausser Betrieb",
+    "operator": "Privat",
+    "source": "Survey",
+    "wikidata": "Q55829818",
+    "wikimedia_commons": "Category:Brunnen Belpstrasse (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5666132333,
+  "lat": 46.9426577,
+  "lon": 7.4257368,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "539",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hofbrunnen_Hopfgut_03.jpg/800px-Hofbrunnen_Hopfgut_03.jpg",
+    "location:description:de": "An der Hofmauer zwischen dem Hopfgut Gebäude Brunnmattstrasse 50 und dem Nebengebäude Brunnmattstrasse 50a in 3007 Bern.",
+    "name:description:de": "Hofbrunnen Hopfgut",
+    "note": "Ausser Betrieb",
+    "operator": "Privat",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56255291",
+    "wikimedia_commons": "Category:Hofbrunnen Hopfgut (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5678143280,
+  "lat": 46.9345279,
+  "lon": 7.4304687,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "550",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Spielbrunnen_Kindergarten_Goumo%C3%ABnsmatte_03.jpg/800px-Spielbrunnen_Kindergarten_Goumo%C3%ABnsmatte_03.jpg",
+    "location:description:de": "Auf dem Spielplatz des Kindergartens Steinhölzli vor den Gebäuden Goumoënsstrasse 46 und 48 in 3007 Bern.",
+    "name:description:de": "Spielbrunnen Kindergarten Steinhölzli",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q57053011",
+    "wikimedia_commons": "Category:Spielbrunnen Kindergarten Steinhölzli (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5715901038,
+  "lat": 46.9443590,
+  "lon": 7.4538463,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "ele": "514",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Nischenbrunnen_Englische_Anlagen_02.jpg/800px-Nischenbrunnen_Englische_Anlagen_02.jpg",
+    "location:description:de": "Im Uferwald nördlich des Weges Englischen Anlagen auf Höhe des Gebäudes Marienstrasse 35 in 3005 Bern.",
+    "name:description:de": "Nischenbrunnen Englische Anlagen",
+    "note": "Ausser Betrieb",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "wikidata": "Q56546090",
+    "wikimedia_commons": "Category:Nischenbrunnen Englische Anlagen (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5751143067,
+  "lat": 46.9546287,
+  "lon": 7.4449191,
+  "tags": {
+    "amenity": "fountain",
+    "artist:wikidata": "Q2545385",
+    "artist_name": "Walter Linck",
+    "artwork_type": "sculpture",
+    "description:de": "Eleganter Brunnen von 1940 mit rundem Becken und vier Wasserdüsen auf einem Standfuss und Skulptur \"ohne Titel\" (Liegender männlicher Akt) aus Bronze, kreiert vom Berner Künstler Walter Linck (1903-1975).",
+    "drinking_water": "yes",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Gewerbeschulebrunnen_%28ohne_Titel_-_Walter_Linck_1940%29_01.jpg/800px-Gewerbeschulebrunnen_%28ohne_Titel_-_Walter_Linck_1940%29_01.jpg",
+    "location:description:de": "Im offenen Erdgeschoss des Gebäudes der Gewerbeschule Bern Lorrainestrasse 1 in 3013 Bern.",
+    "name": "Gewerbeschulebrunnen",
+    "note": "See as well. https://www.e-periodica.ch/digbib/view?pid=bwo-002:1940:30::994",
+    "operator": "Stadt Bern",
+    "source": "Survey",
+    "start_date": "1940",
+    "tourism": "artwork",
+    "wheelchair": "yes",
+    "wikidata": "Q55497395",
+    "wikimedia_commons": "Category:Gewerbeschulebrunnen (ohne Titel - Walter Linck 1940)"
+  }
+},
+{
+  "type": "node",
+  "id": 5754056909,
+  "lat": 46.9648438,
+  "lon": 7.4487175,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "539",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Brunnen_Spielplatz_Wyler-Anlage_05.jpg/800px-Brunnen_Spielplatz_Wyler-Anlage_05.jpg",
+    "location:description:de": "Auf dem Spielplatz Wyler-Anlage gegenüber dem Wohngebäude Dändlikerrain 3 in 3014 Bern.",
+    "name:description:de": "Brunnen Spielplatz Wyler Anlage",
+    "operator": "Stadt Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey",
+    "wikidata": "Q56194070",
+    "wikimedia_commons": "Category:Brunnen Spielplatz Wyler-Anlage (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5766580047,
+  "lat": 46.9198873,
+  "lon": 7.4792612,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5791931232,
+  "lat": 46.9225097,
+  "lon": 7.4161708,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 5820821904,
+  "lat": 46.9315003,
+  "lon": 7.4357486,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "558",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Brunnen_Campagne_Bellevue_%28Bern%29_02.jpg/800px-Brunnen_Campagne_Bellevue_%28Bern%29_02.jpg",
+    "location:description:de": "Auf dem Areal des ehemaligen Zieglerspitals auf der Westseite der Campagne Bellevue Morillonstrasse 87 in 3007 Bern.",
+    "name:description:de": "Brunnen Campagne Bellevue",
+    "operator": "Privat",
+    "source": "Survey",
+    "wikidata": "Q56035514",
+    "wikimedia_commons": "Category:Brunnen Campagne Bellevue (Bern)"
+  }
+},
+{
+  "type": "node",
+  "id": 5825864118,
+  "lat": 46.9529129,
+  "lon": 7.4744055,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "566.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Brunnen_UR10_%28Schosshaldenfriedhof%29_02.jpg/800px-Brunnen_UR10_%28Schosshaldenfriedhof%29_02.jpg",
+    "location:description:de": "Grabfeld UR10 - Urnenreihengräber 10 - des Schosshaldenfriedhofs Ostermundigenstrasse 116-118 in 3006 Bern.",
+    "name:description:de": "Brunnen UR10",
+    "operator": "Stadtgrün Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56234824",
+    "wikimedia_commons": "Category:Brunnen UR10 (Schosshaldenfriedhof)"
+  }
+},
+{
+  "type": "node",
+  "id": 5830846323,
+  "lat": 46.9527873,
+  "lon": 7.4736570,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "ele": "568",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Brunnen_UH8_%28Schosshaldenfriedhof%29_01.jpg/800px-Brunnen_UH8_%28Schosshaldenfriedhof%29_01.jpg",
+    "location:description:de": "Grabfeld UH8 - Urnenhaingräber 8 - des Schosshaldenfriedhofs Ostermundigenstrasse 116-118 in 3006 Bern.",
+    "name:description:de": "Brunnen UH8",
+    "operator": "Stadtgrün Bern",
+    "owner": "Stadt Bern",
+    "source": "Survey and Orthofotos Stadt Bern",
+    "wikidata": "Q56234748",
+    "wikimedia_commons": "Category:Brunnen UH8 (Schosshaldenfriedhof)"
+  }
+},
+{
+  "type": "node",
+  "id": 5939677139,
+  "lat": 46.9730508,
+  "lon": 7.4175895,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6000449672,
+  "lat": 46.9220926,
+  "lon": 7.4191603,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 6147075195,
+  "lat": 46.9293824,
+  "lon": 7.4208791,
+  "tags": {
+    "amenity": "fountain",
+    "check_date": "2026-07-28",
+    "drinking_water": "yes",
+    "fountain": "nozzle"
+  }
+},
+{
+  "type": "node",
+  "id": 6254290059,
+  "lat": 46.9545323,
+  "lon": 7.4906649,
+  "tags": {
+    "access": "yes",
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6254306901,
+  "lat": 46.9549595,
+  "lon": 7.4891745,
+  "tags": {
+    "access": "yes",
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6400870801,
+  "lat": 46.9682242,
+  "lon": 7.3795783,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6432894689,
+  "lat": 46.9382456,
+  "lon": 7.4263034,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6594195934,
+  "lat": 46.9293873,
+  "lon": 7.4470785,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6606294967,
+  "lat": 46.9296721,
+  "lon": 7.4202216,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6749030002,
+  "lat": 46.9396761,
+  "lon": 7.4238427,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6796711060,
+  "lat": 46.9095433,
+  "lon": 7.4694112,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6806454829,
+  "lat": 46.9748498,
+  "lon": 7.4241757,
+  "tags": {
+    "amenity": "fountain",
+    "fountain": "running"
+  }
+},
+{
+  "type": "node",
+  "id": 6806454830,
+  "lat": 46.9748254,
+  "lon": 7.4242234,
+  "tags": {
+    "amenity": "fountain",
+    "fountain": "running"
+  }
+},
+{
+  "type": "node",
+  "id": 6806527342,
+  "lat": 46.9792141,
+  "lon": 7.4409991,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "fountain": "running"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123307,
+  "lat": 46.9509983,
+  "lon": 7.4217743,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123308,
+  "lat": 46.9508902,
+  "lon": 7.4213594,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123309,
+  "lat": 46.9505849,
+  "lon": 7.4223538,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123312,
+  "lat": 46.9486330,
+  "lon": 7.4190396,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123313,
+  "lat": 46.9488365,
+  "lon": 7.4197555,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123314,
+  "lat": 46.9490899,
+  "lon": 7.4205061,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123337,
+  "lat": 46.9504950,
+  "lon": 7.4209149,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6864123338,
+  "lat": 46.9499627,
+  "lon": 7.4221991,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6866738919,
+  "lat": 46.9515120,
+  "lon": 7.4756561,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 6866738923,
+  "lat": 46.9522652,
+  "lon": 7.4729296,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 7136007963,
+  "lat": 46.9289874,
+  "lon": 7.4383186,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7376187789,
+  "lat": 46.9690682,
+  "lon": 7.3807693,
+  "tags": {
+    "access": "yes",
+    "amenity": "fountain",
+    "bottle": "yes",
+    "drinking_water": "yes",
+    "fee": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7454267631,
+  "lat": 46.9077262,
+  "lon": 7.4568442,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7620450724,
+  "lat": 46.9176622,
+  "lon": 7.4064516,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "fee": "no",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7728981170,
+  "lat": 46.9413545,
+  "lon": 7.4312479,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "fountain": "bubbler"
+  }
+},
+{
+  "type": "node",
+  "id": 7947214188,
+  "lat": 46.9300791,
+  "lon": 7.4358407,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "fountain": "bubbler"
+  }
+},
+{
+  "type": "node",
+  "id": 8043906920,
+  "lat": 46.9153184,
+  "lon": 7.3983535,
+  "tags": {
+    "access": "yes",
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "fee": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8789601831,
+  "lat": 46.9267801,
+  "lon": 7.4645362,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 8808590846,
+  "lat": 46.9256917,
+  "lon": 7.3718638,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 8911406588,
+  "lat": 46.9258074,
+  "lon": 7.4244895,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 8914702169,
+  "lat": 46.9209797,
+  "lon": 7.4140741,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "start_date": "1766"
+  }
+},
+{
+  "type": "node",
+  "id": 9043997432,
+  "lat": 46.9487582,
+  "lon": 7.4323316,
+  "tags": {
+    "amenity": "drinking_water",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 9071348096,
+  "lat": 46.9507417,
+  "lon": 7.4549300,
+  "tags": {
+    "access": "private",
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 9177074789,
+  "lat": 46.9749693,
+  "lon": 7.4971671,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9177077548,
+  "lat": 46.9754556,
+  "lon": 7.4961955,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "start_date": "1975"
+  }
+},
+{
+  "type": "node",
+  "id": 9191098555,
+  "lat": 46.9840524,
+  "lon": 7.4979393,
+  "tags": {
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "drinking_water": "yes",
+    "fee": "no",
+    "fountain": "bubbler",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9191153025,
+  "lat": 46.9849241,
+  "lon": 7.4987788,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9205468547,
+  "lat": 46.9475970,
+  "lon": 7.3811047,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 9609084682,
+  "lat": 46.9482806,
+  "lon": 7.4540658,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9609131271,
+  "lat": 46.9479976,
+  "lon": 7.4520582,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9921189365,
+  "lat": 46.9745529,
+  "lon": 7.4956959,
+  "tags": {
+    "amenity": "drinking_water",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 10121094002,
+  "lat": 46.9292311,
+  "lon": 7.4512327,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 10121094009,
+  "lat": 46.9291137,
+  "lon": 7.4509905,
+  "tags": {
+    "amenity": "fountain",
+    "wikimedia_commons": "File:Wabern, Switzerland Oct 22, 2022 01-53-19 PM.jpeg"
+  }
+},
+{
+  "type": "node",
+  "id": 10128593536,
+  "lat": 46.9851696,
+  "lon": 7.4974036,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 10295710583,
+  "lat": 46.9749691,
+  "lon": 7.4924763,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "heritage": "3",
+    "heritage:operator": "babs",
+    "wikidata": "Q112945587"
+  }
+},
+{
+  "type": "node",
+  "id": 10917413825,
+  "lat": 46.9474108,
+  "lon": 7.4405820,
+  "tags": {
+    "amenity": "drinking_water",
+    "description": "Am 23.7.2025 kommt bei Knopfdruck nur tröpfelndes Wasser, da ist man besser beraten, woanders Wasser zu finden.",
+    "man_made": "drinking_fountain",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10945015256,
+  "lat": 46.9463412,
+  "lon": 7.4157913,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 11211883688,
+  "lat": 46.9474096,
+  "lon": 7.4505664,
+  "tags": {
+    "amenity": "fountain",
+    "amenity_1": "drinking_water",
+    "drinking_water": "yes",
+    "name": "Moses Fountain",
+    "name:zh": "摩西噴泉"
+  }
+},
+{
+  "type": "node",
+  "id": 11211898835,
+  "lat": 46.9473472,
+  "lon": 7.4482371,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11211913763,
+  "lat": 46.9477044,
+  "lon": 7.4436806,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 11225418983,
+  "lat": 46.9757856,
+  "lon": 7.4374902,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 11581305812,
+  "lat": 46.9369219,
+  "lon": 7.4363130,
+  "tags": {
+    "amenity": "fountain",
+    "name": "Monbijoubrunnen"
+  }
+},
+{
+  "type": "node",
+  "id": 11663749052,
+  "lat": 46.9203836,
+  "lon": 7.3987426,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 12160523603,
+  "lat": 46.9243887,
+  "lon": 7.4389539,
+  "tags": {
+    "amenity": "drinking_water",
+    "fee": "no",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 12245064360,
+  "lat": 46.9590880,
+  "lon": 7.4951174,
+  "tags": {
+    "addr:full": "Wegmühlegässli N.N., 3072 Ostermundigen",
+    "amenity": "fountain",
+    "drinking_water": "yes",
+    "wikidata": "Q130489488",
+    "wikimedia_commons": "Category:Brunnen (Ostermundigengut, Wegmühlegässli, Ostermundigen)"
+  }
+},
+{
+  "type": "node",
+  "id": 12258024391,
+  "lat": 46.9583674,
+  "lon": 7.4540387,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 12270840857,
+  "lat": 46.9447974,
+  "lon": 7.4471406,
+  "tags": {
+    "amenity": "drinking_water",
+    "fee": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12309764330,
+  "lat": 46.9296738,
+  "lon": 7.4153970,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 12343277800,
+  "lat": 46.9157522,
+  "lon": 7.4732567,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "no",
+    "fountain": "decorative",
+    "lit": "no",
+    "operator": "Schule Kehrsatz"
+  }
+},
+{
+  "type": "node",
+  "id": 12480272600,
+  "lat": 46.9408311,
+  "lon": 7.3861093,
+  "tags": {
+    "amenity": "drinking_water",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 12528840418,
+  "lat": 46.9094817,
+  "lon": 7.4720894,
+  "tags": {
+    "amenity": "fountain",
+    "note": "Belpstrasse N.N.1, 3122 Kehrsatz",
+    "wikidata": "Q141453426"
+  }
+},
+{
+  "type": "node",
+  "id": 12528840419,
+  "lat": 46.9094519,
+  "lon": 7.4723099,
+  "tags": {
+    "amenity": "fountain",
+    "note": "Belpstrasse N.N.2, 3122 Kehrsatz",
+    "wikidata": "Q141453268"
+  }
+},
+{
+  "type": "node",
+  "id": 12528840439,
+  "lat": 46.9098345,
+  "lon": 7.4720061,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 12749429412,
+  "lat": 46.9194673,
+  "lon": 7.4132429,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 12787030013,
+  "lat": 46.9595460,
+  "lon": 7.4656705,
+  "tags": {
+    "amenity": "fountain",
+    "description": "Ca. 7 Fontänen am Boden"
+  }
+},
+{
+  "type": "node",
+  "id": 12871382438,
+  "lat": 46.9403799,
+  "lon": 7.4776049,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12871382439,
+  "lat": 46.9401564,
+  "lon": 7.4779294,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13048461514,
+  "lat": 46.9191432,
+  "lon": 7.4385319,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "drinking_water": "yes",
+    "fountain": "drinking",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13048461515,
+  "lat": 46.9293870,
+  "lon": 7.4470754,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fountain": "drinking"
+  }
+},
+{
+  "type": "node",
+  "id": 13048461516,
+  "lat": 46.9504767,
+  "lon": 7.3756685,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 13048497082,
+  "lat": 46.9334016,
+  "lon": 7.4528654,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 13176772331,
+  "lat": 46.9211153,
+  "lon": 7.3830094,
+  "tags": {
+    "amenity": "fountain"
+  }
+},
+{
+  "type": "node",
+  "id": 13234350690,
+  "lat": 46.9213616,
+  "lon": 7.4141869,
+  "tags": {
+    "amenity": "fountain",
+    "drinking_water": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13787010601,
+  "lat": 46.9377775,
+  "lon": 7.4516441,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 13796994940,
+  "lat": 46.9567796,
+  "lon": 7.4235564,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "fee": "no",
+    "indoor": "no",
+    "lit": "no",
+    "name": "Halenbrunnen",
+    "seasonal": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13859979325,
+  "lat": 46.9400663,
+  "lon": 7.3901411,
+  "tags": {
+    "amenity": "drinking_water",
+    "man_made": "water_tap"
+  }
+},
+{
+  "type": "node",
+  "id": 14133505033,
+  "lat": 46.9435379,
+  "lon": 7.3818331,
+  "tags": {
+    "amenity": "drinking_water",
+    "man_made": "water_tap"
+  }
+}
+
+  ]
+}

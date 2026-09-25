@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bern Trinkwasser</title>
+<meta name="description" content="Alle öffentlichen Brunnen in der Stadt Bern auf einer Karte. Nächster Trinkbrunnen mit einem Tipp. Offline nutzbar, kein Tracking.">
+<meta name="theme-color" content="#0b2a3a">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+:root{--bg:#0b2a3a;--card:#123a4f;--line:#1f5068;--txt:#eaf4f8;--mut:#9dc0d0;--acc:#5fe1d4;--no:#ff6b6b;--unk:#ffcc55}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font:16px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif}
+#app{display:flex;flex-direction:column;height:100%}
+header{padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+h1{font-size:19px;margin:0;font-weight:700}
+.sp{flex:1}
+button,.chip{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:14px;cursor:pointer;min-height:40px}
+button.pri{background:var(--acc);color:#04202a;border-color:var(--acc);font-weight:700}
+.chip[aria-pressed="true"]{background:var(--acc);color:#04202a;border-color:var(--acc);font-weight:600}
+#map{flex:1;min-height:300px;background:#dfe9ee}
+#panel{padding:10px 14px;border-top:1px solid var(--line);font-size:15px}
+#panel b{color:var(--acc)}
+.leaflet-popup-content{font:14px/1.4 -apple-system,system-ui,sans-serif;color:#0b2a3a}
+.leaflet-popup-content a{color:#0a8f84}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.d-yes{background:#1fbf8f}.d-no{background:var(--no)}.d-unknown{background:var(--unk)}
+.me{width:18px;height:18px;border-radius:50%;background:#2f7bff;border:3px solid #fff;box-shadow:0 0 0 2px #2f7bff}
+.foot{color:var(--mut);font-size:12px;padding:6px 14px 10px}.foot a{color:var(--acc)}
+.lang button{padding:4px 8px;min-height:30px;font-size:13px}
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+  <h1 data-i="title">Bern Trinkwasser</h1>
+  <span class="chip" role="button" tabindex="0" id="fOnly" aria-pressed="true" data-i="only">nur trinkbar</span>
+  <span class="sp"></span>
+  <span class="lang"><button data-l="de" aria-pressed="true">DE</button><button data-l="en" aria-pressed="false">EN</button><button data-l="sk" aria-pressed="false">SK</button></span>
+  <button class="pri" id="near" data-i="near">Nächster Brunnen</button>
+</header>
+<div id="map" role="application" aria-label="Karte"></div>
+<div id="panel" aria-live="polite"><span data-i="hint">Tippe auf „Nächster Brunnen“ oder auf einen Punkt.</span></div>
+<div class="foot"><span data-i="src">Daten</span>: <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (ODbL), <span id="meta"></span>. <span data-i="foot">Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät.</span> · <a href="https://github.com/richardcervenka111-create/bern-trinkwasser" rel="noopener">GitHub</a></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="fountains.js"></script>
+<script>
+(function(){
+const I={
+ de:{title:"Bern Trinkwasser",only:"nur trinkbar",near:"Nächster Brunnen",hint:"Tippe auf „Nächster Brunnen“ oder auf einen Punkt.",src:"Daten",foot:"Trinkbar = Tag drinking_water=yes. Gelb = unbekannt, im Zweifel Schild am Brunnen beachten. Kein Tracking, Standort bleibt im Gerät.",
+  yes:"Trinkwasser",no:"Kein Trinkwasser",unknown:"Trinkwasser unbekannt",dw:"Trinkbrunnen",ft:"Brunnen",route:"Route",m:"m",away:"entfernt",nearest:"Nächster Trinkbrunnen",noGeo:"Standort nicht verfügbar. Erlaube den Zugriff oder zoome selbst.",wheel:"rollstuhlgängig",bottle:"Flasche füllbar",n:"Brunnen",stand:"Stand OSM"},
+ en:{title:"Bern Drinking Water",only:"drinkable only",near:"Nearest fountain",hint:"Tap “Nearest fountain” or a dot.",src:"Data",foot:"Drinkable = tag drinking_water=yes. Yellow = unknown, check the sign on the fountain. No tracking, your location stays on the device.",
+  yes:"Drinking water",no:"Not drinking water",unknown:"Drinking water unknown",dw:"Drinking fountain",ft:"Fountain",route:"Route",m:"m",away:"away",nearest:"Nearest drinking fountain",noGeo:"Location unavailable. Allow access or zoom yourself.",wheel:"wheelchair accessible",bottle:"bottle refill",n:"fountains",stand:"OSM as of"},
+ sk:{title:"Bern pitná voda",only:"len pitná",near:"Najbližšia fontána",hint:"Ťukni na „Najbližšia fontána“ alebo na bod.",src:"Dáta",foot:"Pitná = tag drinking_water=yes. Žltá = neznáme, pri pochybnosti pozri tabuľku na fontáne. Žiadne sledovanie, poloha ostáva v zariadení.",
+  yes:"Pitná voda",no:"Nie pitná voda",unknown:"Pitnosť neznáma",dw:"Pitná fontána",ft:"Fontána",route:"Trasa",m:"m",away:"odtiaľto",nearest:"Najbližšia pitná fontána",noGeo:"Poloha nedostupná. Povoľ prístup alebo si priblíž mapu sám.",wheel:"bezbariérová",bottle:"plnenie fľaše",n:"fontán",stand:"OSM k"}
+};
+let lang=(navigator.language||"de").slice(0,2); if(!I[lang]) lang="de";
+try{const s=localStorage.getItem("bw-lang"); if(s&&I[s]) lang=s;}catch(e){}
+const t=k=>I[lang][k];
+let onlyDrink=true, me=null, meMarker=null, line=null;
+const data=window.FOUNTAINS||[];
+const map=L.map("map",{zoomControl:true}).setView([46.948,7.447],14);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(map);
+const layer=L.layerGroup().addTo(map);
+function icon(cls){return L.divIcon({className:"",html:`<div class="dot d-${cls}"></div>`,iconSize:[14,14],iconAnchor:[7,7]});}
+function label(f){ const kind=t(f.k), st=t(f.d); const name=f.n?`<b>${esc(f.n)}</b><br>`:""; const loc=f.l?esc(f.l)+"<br>":""; const extra=[f.w==="yes"?t("wheel"):"",f.b==="yes"?t("bottle"):""].filter(Boolean).join(" · ");
+  return `${name}${loc}${kind} · <b>${st}</b>${extra?"<br>"+extra:""}<br><a href="https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lon}&travelmode=walking" rel="noopener">${t("route")}</a> · <a href="https://www.openstreetmap.org/node/${f.id}" rel="noopener">OSM</a>`; }
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function draw(){ layer.clearLayers(); let n=0; data.forEach(f=>{ if(onlyDrink&&f.d!=="yes") return; n++; L.marker([f.lat,f.lon],{icon:icon(f.d)}).bindPopup(label(f)).addTo(layer); }); document.getElementById("meta").textContent=`${n} ${t("n")}, ${t("stand")} ${(window.FOUNTAINS_META||{}).osm_base||""}`; }
+function dist(a,b,c,d){const R=6371000,p=Math.PI/180,x=(c-a)*p,y=(d-b)*p,h=Math.sin(x/2)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+function nearest(){ if(!me) return; let best=null,bd=1e12; data.forEach(f=>{ if(f.d!=="yes") return; const d=dist(me[0],me[1],f.lat,f.lon); if(d<bd){bd=d;best=f;} }); if(!best) return;
+  if(line) map.removeLayer(line); line=L.polyline([me,[best.lat,best.lon]],{color:"#2f7bff",dashArray:"6 6",weight:3}).addTo(map);
+  map.fitBounds(line.getBounds(),{padding:[40,40],maxZoom:17});
+  const pan=document.getElementById("panel"); pan.innerHTML=`<b>${t("nearest")}</b>: ${best.n?esc(best.n):(best.l?esc(best.l):t("dw"))} · <b>${Math.round(bd)} ${t("m")}</b> ${t("away")} · <a style="color:var(--acc)" href="https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lon}&travelmode=walking" rel="noopener">${t("route")}</a>`;
+  L.popup().setLatLng([best.lat,best.lon]).setContent(label(best)).openOn(map); }
+document.getElementById("near").addEventListener("click",()=>{ if(!navigator.geolocation){alert(t("noGeo"));return;}
+  navigator.geolocation.getCurrentPosition(p=>{ me=[p.coords.latitude,p.coords.longitude]; if(meMarker) map.removeLayer(meMarker); meMarker=L.marker(me,{icon:L.divIcon({className:"",html:'<div class="me"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map); nearest(); },()=>alert(t("noGeo")),{enableHighAccuracy:true,timeout:10000}); });
+const fo=document.getElementById("fOnly"); function toggle(){ onlyDrink=!onlyDrink; fo.setAttribute("aria-pressed",onlyDrink?"true":"false"); draw(); }
+fo.addEventListener("click",toggle); fo.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+function applyLang(){ document.documentElement.lang=lang; document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i)); document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang?"true":"false")); draw(); }
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.l; try{localStorage.setItem("bw-lang",lang);}catch(e){} applyLang();}));
+applyLang();
+})();
+</script>
+</body>
+</html>
